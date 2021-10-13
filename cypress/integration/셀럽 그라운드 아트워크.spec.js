@@ -20,10 +20,19 @@ describe('셀럽 그라운드 아트워크', () => {
 
   // 셀럽 그라운드 아트워크
 
-  it('', () => {
+  it('셀럽 그라운드 아트워크 삭제', () => {
     const q = 0;
-    const url = '';
-    // DELETE /api/v1/celeb-ground/{artistMemberNo}/artwork 셀럽 그라운드 아트워크 삭제
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/artwork';
+    const req = {};
+    del(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('셀럽 그라운드 아트워크 목록', () => {
+    const q = 0;
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/artwork';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,34 +40,21 @@ describe('셀럽 그라운드 아트워크', () => {
     });
   });
 
-  it('', () => {
+  it('셀럽 그라운드 아트워크 공개여부', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/celeb-ground/{artistMemberNo}/artwork 셀럽 그라운드 아트워크 목록
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/artwork/openYn/{openYn}';
     const req = {};
-    get(token, url, null).should((response) => {
+    put(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('셀럽 그라운드 아트워크 순서변경', () => {
     const q = 0;
-    const url = '';
-    // PUT /api/v1/celeb-ground/{artistMemberNo}/artwork/openYn/{openYn} 셀럽 그라운드 아트워크 공개여부
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/artwork/sortOrder';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('', () => {
-    const q = 0;
-    const url = '';
-    // PUT /api/v1/celeb-ground/{artistMemberNo}/artwork/sortOrder 셀럽 그라운드 아트워크 순서변경
-    const req = {};
-    get(token, url, null).should((response) => {
+    put(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

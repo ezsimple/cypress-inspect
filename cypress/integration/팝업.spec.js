@@ -20,10 +20,9 @@ describe('팝업', () => {
 
   // 팝업
 
-  it('', () => {
+  it('팝업 리스트', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/popup 팝업 리스트
+    const url = '/api/v1/popup';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

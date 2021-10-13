@@ -20,10 +20,9 @@ describe('장바구니', () => {
 
   // 장바구니
 
-  it('', () => {
+  it('장바구니 목록', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/orderCart 장바구니 목록
+    const url = '/api/v1/orderCart';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,32 +30,29 @@ describe('장바구니', () => {
     });
   });
 
-  it('', () => {
+  it('장바구니 저장', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/orderCart 장바구니 저장
+    const url = '/api/v1/orderCart';
     const req = {};
-    get(token, url, null).should((response) => {
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('장바구니 수정', () => {
+    const q = 0;
+    const url = '/api/v1/orderCart';
+    const req = {};
+    put(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('장바구니 수정화면 상품 옵션 목록', () => {
     const q = 0;
-    const url = '';
-    // PUT /api/v1/orderCart 장바구니 수정
-    const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('', () => {
-    const q = 0;
-    const url = '';
-    // GET /api/v1/orderCart/options/{cartIndex} 장바구니 수정화면 상품 옵션 목록
+    const url = '/api/v1/orderCart/options/{cartIndex}';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

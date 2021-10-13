@@ -20,32 +20,29 @@ describe('주문/결제', () => {
 
   // 주문/결제
 
-  it('', () => {
+  it('결제하기', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/order 결제하기
+    const url = '/api/v1/order';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('주문서_주문상품조회', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/order/item 주문서_주문상품조회
+    const url = '/api/v1/order/item';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('주문저장결과', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/order/result/{orderNo} 주문저장결과
+    const url = '/api/v1/order/result/{orderNo}';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

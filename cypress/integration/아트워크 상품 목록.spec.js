@@ -20,10 +20,9 @@ describe('아트워크 상품 목록', () => {
 
   // 아트워크 상품 목록
 
-  it('', () => {
+  it('아트워크 상품 목록', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/art-product/productList 아트워크 상품 목록
+    const url = '/api/v1/art-product/productList';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

@@ -20,10 +20,9 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
 
   // 마이페이지 - 쇼핑내역>주문배송조회
 
-  it('', () => {
+  it('주문상태 변경 이력 목록', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/orderHistory 주문상태 변경 이력 목록
+    const url = '/api/v1/orderHistory';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,10 +30,9 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     });
   });
 
-  it('', () => {
+  it('주문 목록', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/orderShipping 주문 목록
+    const url = '/api/v1/orderShipping';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -42,10 +40,19 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     });
   });
 
-  it('', () => {
+  it('주문취소 처리', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/orderShipping/cancel 주문취소 처리
+    const url = '/api/v1/orderShipping/cancel';
+    const req = {};
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('주문취소 양식', () => {
+    const q = 0;
+    const url = '/api/v1/orderShipping/cancel/{orderNo}';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -53,10 +60,19 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     });
   });
 
-  it('', () => {
+  it('교환신청 처리(작업중)', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/orderShipping/cancel/{orderNo} 주문취소 양식
+    const url = '/api/v1/orderShipping/exchange';
+    const req = {};
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('교환신청 양식', () => {
+    const q = 0;
+    const url = '/api/v1/orderShipping/exchange/{orderNo}';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -64,10 +80,19 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     });
   });
 
-  it('', () => {
+  it('배송정보 수정', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/orderShipping/exchange 교환신청 처리(작업중)
+    const url = '/api/v1/orderShipping/shippingInfo';
+    const req = {};
+    put(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('주문상세보기', () => {
+    const q = 0;
+    const url = '/api/v1/orderShipping/{orderNo}';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -75,57 +100,22 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     });
   });
 
-  it('', () => {
+  it('교환신청 사진첨부 업로드', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/orderShipping/exchange/{orderNo} 교환신청 양식
+    const url = '/api/v1/orderShippping/exchange/image/fileUpload';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('반품신청 사진첨부 업로드', () => {
     const q = 0;
-    const url = '';
-    // PUT /api/v1/orderShipping/shippingInfo 배송정보 수정
+    const url = '/api/v1/orderShippping/returning/image/fileUpload';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('', () => {
-    const q = 0;
-    const url = '';
-    // GET /api/v1/orderShipping/{orderNo} 주문상세보기
-    const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('', () => {
-    const q = 0;
-    const url = '';
-    // POST /api/v1/orderShippping/exchange/image/fileUpload 교환신청 사진첨부 업로드
-    const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('', () => {
-    const q = 0;
-    const url = '';
-    // POST /api/v1/orderShippping/returning/image/fileUpload 반품신청 사진첨부 업로드
-    const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });

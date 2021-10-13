@@ -20,10 +20,9 @@ describe('셀럽 본인인증', () => {
 
   // 셀럽 본인 인증
 
-  it('', () => {
+  it('본인인증 정보 조회', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/celeb/auth 본인인증 정보 조회
+    const url = '/api/v1/celeb/auth';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,13 +30,12 @@ describe('셀럽 본인인증', () => {
     });
   });
 
-  it('', () => {
+  it('본인인증 완료', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/celeb/auth 본인인증 완료
+    const url = '/api/v1/celeb/auth';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });

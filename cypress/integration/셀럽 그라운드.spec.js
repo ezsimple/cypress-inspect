@@ -20,42 +20,29 @@ describe('셀럽 그라운드', () => {
 
   // 셀럽 그라운드
 
-  it('', () => {
+  it('셀럽 그라운드 편집', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/celeb-ground/ground 셀럽 그라운드 편집
+    const url = '/api/v1/celeb-ground/ground';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('그라운드 커버 이미지 업로드', () => {
     const q = 0;
-    const url = '';
+    const url = '/api/v1/celeb-ground/ground/cover/fileUpload';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('셀럽 그라운드 정보', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/celeb-ground/ground/cover/fileUpload 그라운드 커버 이미지 업로드
-    const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('', () => {
-    const q = 0;
-    const url = '';
-    // GET /api/v1/celeb-ground/ground/{shopId} 셀럽 그라운드 정보
+    const url = '/api/v1/celeb-ground/ground/{shopId}';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

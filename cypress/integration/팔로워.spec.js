@@ -20,21 +20,19 @@ describe('팔로워', () => {
 
   // 팔로워
 
-  it('', () => {
+  it('팔로우', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/follow 팔로우
+    const url = '/api/v1/follow';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('팔로워 페이징', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/follower 팔로워 페이징
+    const url = '/api/v1/follower';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

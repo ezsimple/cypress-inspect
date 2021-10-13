@@ -20,10 +20,9 @@ describe('FAQ', () => {
 
   // FAQ
 
-  it('', () => {
+  it('셀럽 FAQ 페이징', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/celeb/faq 셀럽 FAQ 페이징
+    const url = '/api/v1/celeb/faq';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,10 +30,9 @@ describe('FAQ', () => {
     });
   });
 
-  it('', () => {
+  it('쇼핑몰 FAQ 페이징', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/mall/faq 쇼핑몰 FAQ 페이징
+    const url = '/api/v1/mall/faq';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -42,10 +40,9 @@ describe('FAQ', () => {
     });
   });
 
-  it('', () => {
+  it('유형 카테고리 코드 리스트', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/type-category/{typeCategoryCode}/code 유형 카테고리 코드 리스트
+    const url = '/api/v1/type-category/{typeCategoryCode}/code';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

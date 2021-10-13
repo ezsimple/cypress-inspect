@@ -20,10 +20,19 @@ describe('셀럽 그라운드 상품', () => {
 
   // 셀럽 그라운드 상품
 
-  it('', () => {
+  it('셀럽 그라운드 상품 삭제', () => {
     const q = 0;
-    const url = '';
-    // DELETE /api/v1/celeb-ground/{artistMemberNo}/product 셀럽 그라운드 상품 삭제
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/product';
+    const req = {};
+    del(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('셀럽 그라운드 상품 목록', () => {
+    const q = 0;
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/product';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,10 +40,9 @@ describe('셀럽 그라운드 상품', () => {
     });
   });
 
-  it('', () => {
+  it('개인화 아트워크상품 추천', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/celeb-ground/{artistMemberNo}/product 셀럽 그라운드 상품 목록
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/product/ai1';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -42,34 +50,21 @@ describe('셀럽 그라운드 상품', () => {
     });
   });
 
-  it('', () => {
+  it('셀럽 그라운드 상품 공개여부', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/celeb-ground/{artistMemberNo}/product/ai1 개인화 아트워크상품 추천
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/product/openYn/{openYn}';
     const req = {};
-    get(token, url, null).should((response) => {
+    put(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('셀럽 그라운드 상품 순서변경', () => {
     const q = 0;
-    const url = '';
-    // PUT /api/v1/celeb-ground/{artistMemberNo}/product/openYn/{openYn} 셀럽 그라운드 상품 공개여부
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/product/sortOrder';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('', () => {
-    const q = 0;
-    const url = '';
-    // PUT /api/v1/celeb-ground/{artistMemberNo}/product/sortOrder 셀럽 그라운드 상품 순서변경
-    const req = {};
-    get(token, url, null).should((response) => {
+    put(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

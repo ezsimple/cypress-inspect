@@ -20,10 +20,9 @@ describe('좋아요', () => {
 
   // 좋아요
 
-  it('', () => {
+  it('셀럽 그라운드 아트웍 상품 좋아요 페이징', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/celeb-ground/{artistMemberNo}/art-product/like 셀럽 그라운드 아트웍 상품 좋아요 페이징
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/art-product/like';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,10 +30,9 @@ describe('좋아요', () => {
     });
   });
 
-  it('', () => {
+  it('셀럽 그라운드 아트워크 좋아요 페이징', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/celeb-ground/{artistMemberNo}/artwork/like 셀럽 그라운드 아트워크 좋아요 페이징
+    const url = '/api/v1/celeb-ground/{artistMemberNo}/artwork/like';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -42,10 +40,9 @@ describe('좋아요', () => {
     });
   });
 
-  it('', () => {
+  it('팔로우한 셀럽 페이징', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/following/celeb 팔로우한 셀럽 페이징
+    const url = '/api/v1/following/celeb';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -53,54 +50,49 @@ describe('좋아요', () => {
     });
   });
 
-  it('', () => {
+  it('좋아요 아트웍 상품 등록 취소', () => {
     const q = 0;
-    const url = '';
-    // DELETE /api/v1/like/art-product 좋아요 아트웍 상품 등록 취소
+    const url = '/api/v1/like/art-product';
     const req = {};
-    get(token, url, null).should((response) => {
+    del(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('좋아요 아트웍 상품 등록', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/like/art-product 좋아요 아트웍 상품 등록
+    const url = '/api/v1/like/art-product';
     const req = {};
-    get(token, url, null).should((response) => {
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('좋아요 아트워크 등록 취소', () => {
+    const q = 0;
+    const url = '/api/v1/like/artwork';
+    const req = {};
+    del(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('좋아요 아트워크 등록', () => {
     const q = 0;
-    const url = '';
-    // DELETE /api/v1/like/artwork 좋아요 아트워크 등록 취소
+    const url = '/api/v1/like/artwork';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('좋아요 판매 대상 페이징', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/like/artwork 좋아요 아트워크 등록
-    const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('', () => {
-    const q = 0;
-    const url = '';
-    // GET /api/v1/like/sale-target 좋아요 판매 대상 페이징
+    const url = '/api/v1/like/sale-target';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

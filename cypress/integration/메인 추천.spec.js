@@ -20,10 +20,9 @@ describe('메인 추천', () => {
 
   // 메인 추천(작업중)
 
-  it('', () => {
+  it('최근 본 히스토리(작업중)', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/main/recentHistory 최근 본 히스토리(작업중)
+    const url = '/api/v1/main/recentHistory';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,10 +30,9 @@ describe('메인 추천', () => {
     });
   });
 
-  it('', () => {
+  it('추천 셀럽 목록(작업중)', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/main/recommendArtist 추천 셀럽 목록(작업중)
+    const url = '/api/v1/main/recommendArtist';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -42,10 +40,9 @@ describe('메인 추천', () => {
     });
   });
 
-  it('', () => {
+  it('추천 아트워크 목록(작업중)', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/main/recommendArtwork 추천 아트워크 목록(작업중)
+    const url = '/api/v1/main/recommendArtwork';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -53,10 +50,9 @@ describe('메인 추천', () => {
     });
   });
 
-  it('', () => {
+  it('추천 상품 목록(작업중)', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/main/recommendProduct 추천 상품 목록(작업중)
+    const url = '/api/v1/main/recommendProduct';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

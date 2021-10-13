@@ -20,10 +20,9 @@ describe('마이페이지 - 메인', () => {
 
   // 마이페이지 - 메인
 
-  it('', () => {
+  it('회원 정보 조회', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/member/info 회원 정보 조회
+    const url = '/api/v1/member/info';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,10 +30,9 @@ describe('마이페이지 - 메인', () => {
     });
   });
 
-  it('', () => {
+  it('프로필 편집 정보 조회', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/member/profile 프로필 편집 정보 조회
+    const url = '/api/v1/member/profile';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -42,24 +40,22 @@ describe('마이페이지 - 메인', () => {
     });
   });
 
-  it('', () => {
+  it('프로필 저장', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/member/profile 프로필 저장
+    const url = '/api/v1/member/profile';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('프로필 이미지 업로드', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/member/profile/image/fileUpload 프로필 이미지 업로드
+    const url = '/api/v1/member/profile/image/fileUpload';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });

@@ -20,10 +20,19 @@ describe('아트워크 편집기', () => {
 
   // 아트워크 편집기
 
-  it('', () => {
+  it('아트워크 편집기 - 원가 조회', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/artwork/editor/cost 아트워크 편집기 - 원가 조회
+    const url = '/api/v1/artwork/editor/cost';
+    const req = {};
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('아트워크 편집기 - 정보 조회', () => {
+    const q = 0;
+    const url = '/api/v1/artwork/editor/{artworkIndex}';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,46 +40,32 @@ describe('아트워크 편집기', () => {
     });
   });
 
-  it('', () => {
+  it('아트워크 편집기 - 정보 저장', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/artwork/editor/{artworkIndex} 아트워크 편집기 - 정보 조회
+    const url = '/api/v1/artwork/editor/{artworkIndex}';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('아트워크 편집기 - 이미지 등록', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/artwork/editor/{artworkIndex} 아트워크 편집기 - 정보 저장
+    const url = '/api/v1/artwork/editor/{artworkIndex}/image/fileUpload';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('신규 아트워크 등록', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/artwork/editor/{artworkIndex}/image/fileUpload 아트워크 편집기 - 이미지 등록
+    const url = '/api/v1/artwork/new/fileUpload';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('', () => {
-    const q = 0;
-    const url = '';
-    // POST /api/v1/artwork/new/fileUpload 신규 아트워크 등록
-    const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });

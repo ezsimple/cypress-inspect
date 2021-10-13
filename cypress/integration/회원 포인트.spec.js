@@ -20,10 +20,9 @@ describe('회원 포인트', () => {
 
   // 회원포인트
 
-  it('', () => {
+  it('보유 포인트 조회', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/point/member-hold-point 보유 포인트 조회
+    const url = '/api/v1/point/member-hold-point';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

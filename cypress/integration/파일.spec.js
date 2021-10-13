@@ -20,13 +20,12 @@ describe('파일', () => {
 
   // 파일
 
-  it('', () => {
+  it('파일 다운로드', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/file/download fileDownload
+    const url = '/api/v1/file/download';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });

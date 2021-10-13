@@ -75,13 +75,12 @@ describe('회원가입', () => {
     });
   });
 
-  it('', () => {
+  it('이메일 인증코드 발송', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/member/verify/email/send 이메일 인증코드 발송
+    const url = '/api/v1/member/verify/email/send';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });

@@ -20,10 +20,19 @@ describe('셀럽 그라운드 - 메세지', () => {
 
   // 셀럽 그라운드 - 메세지
 
-  it('', () => {
+  it('전체 메세지 삭제', () => {
     const q = 0;
-    const url = '';
-    // DELETE /api/v1/celeb-ground/message 전체 메세지 삭제
+    const url = '/api/v1/celeb-ground/message';
+    const req = {};
+    del(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('전체 메세지 조회', () => {
+    const q = 0;
+    const url = '/api/v1/celeb-ground/message';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,34 +40,21 @@ describe('셀럽 그라운드 - 메세지', () => {
     });
   });
 
-  it('', () => {
+  it('메세지 보내기', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/celeb-ground/message 전체 메세지 조회
+    const url = '/api/v1/celeb-ground/message';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('단건 메세지 삭제', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/celeb-ground/message 메세지 보내기
+    const url = '/api/v1/celeb-ground/message/{artistMessageIndex}';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('', () => {
-    const q = 0;
-    const url = '';
-    // DELETE /api/v1/celeb-ground/message/{artistMessageIndex} 단건 메세지 삭제
-    const req = {};
-    get(token, url, null).should((response) => {
+    del(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

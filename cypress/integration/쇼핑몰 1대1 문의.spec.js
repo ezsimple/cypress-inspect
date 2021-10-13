@@ -20,10 +20,9 @@ describe('쇼핑몰 1:1문의', () => {
 
   // 쇼핑몰 1:1문의
 
-  it('', () => {
+  it('쇼핑몰 1:1문의 페이징', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/buyer/inquiry 쇼핑몰 1:1문의 페이징
+    const url = '/api/v1/buyer/inquiry';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
@@ -31,32 +30,29 @@ describe('쇼핑몰 1:1문의', () => {
     });
   });
 
-  it('', () => {
+  it('쇼핑몰 1:1문의 등록', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/buyer/inquiry 쇼핑몰 1:1문의 등록
+    const url = '/api/v1/buyer/inquiry';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('쇼핑몰 1:1문의 재등록', () => {
     const q = 0;
-    const url = '';
-    // POST /api/v1/buyer/re-inquiry 쇼핑몰 1:1문의 재등록
+    const url = '/api/v1/buyer/re-inquiry';
     const req = {};
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
+    post(token, url, null).should((response) => {
+      expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
   });
 
-  it('', () => {
+  it('유형 카테고리 코드 리스트', () => {
     const q = 0;
-    const url = '';
-    // GET /api/v1/type-category/{typeCategoryCode}/code 유형 카테고리 코드 리스트
+    const url = '/api/v1/type-category/{typeCategoryCode}/code';
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
