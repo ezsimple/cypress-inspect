@@ -19,14 +19,44 @@ describe('마이페이지 - 메인', () => {
   });
 
   // 마이페이지 - 메인
-  // GET /api/v1/member/info
-  // GET /api/v1/member/profile
-  // POST /api/v1/member/profile
-  // POST /api/v1/member/profile/image/fileUpload
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/member/info 회원 정보 조회
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/member/profile 프로필 편집 정보 조회
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/member/profile 프로필 저장
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/member/profile/image/fileUpload 프로필 이미지 업로드
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

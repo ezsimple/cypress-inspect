@@ -19,22 +19,132 @@ describe('이벤트', () => {
   });
 
   // 이벤트
-  // GET /api/v1/event/current 진행중인 이벤트 목록
-  // GET /api/v1/event/current/basic/{eventIndex} 이벤트상세(기본형)
-  // POST /api/v1/event/current/comment 이벤트 댓글 등록
-  // DELETE /api/v1/event/current/comment/{applyIndex} 이벤트 댓글 삭제
-  // PUT /api/v1/event/current/comment/{applyIndex} 이벤트 댓글 수정
-  // GET /api/v1/event/current/comment/{eventIndex} 이벤트상세(댓글형)
-  // GET /api/v1/event/current/coupon/{eventIndex} 이벤트상세(쿠폰형)
-  // POST /api/v1/event/current/entry 이벤트 응모 등록
-  // GET /api/v1/event/current/entry/form/{eventIndex} 이벤트 응모하기 조회화면
-  // GET /api/v1/event/current/entry/{eventIndex} 이벤트상세(응모형)
-  // GET /api/v1/event/old 종료된 이벤트 목록
-  // GET /api/v1/event/old/entry/{eventIndex} 이벤트 응모형 당첨자 발표
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/event/current 진행중인 이벤트 목록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/event/current/basic/{eventIndex} 이벤트상세(기본형)
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/event/current/comment 이벤트 댓글 등록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // DELETE /api/v1/event/current/comment/{applyIndex} 이벤트 댓글 삭제
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // PUT /api/v1/event/current/comment/{applyIndex} 이벤트 댓글 수정
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/event/current/comment/{eventIndex} 이벤트상세(댓글형)
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/event/current/coupon/{eventIndex} 이벤트상세(쿠폰형)
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/event/current/entry 이벤트 응모 등록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/event/current/entry/form/{eventIndex} 이벤트 응모하기 조회화면
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/event/current/entry/{eventIndex} 이벤트상세(응모형)
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/event/old 종료된 이벤트 목록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/event/old/entry/{eventIndex} 이벤트 응모형 당첨자 발표
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

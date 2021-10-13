@@ -19,15 +19,55 @@ describe('셀럽 그라운드 상품', () => {
   });
 
   // 셀럽 그라운드 상품
-  // DELETE /api/v1/celeb-ground/{artistMemberNo}/product 셀럽 그라운드 상품 삭제
-  // GET /api/v1/celeb-ground/{artistMemberNo}/product 셀럽 그라운드 상품 목록
-  // GET /api/v1/celeb-ground/{artistMemberNo}/product/ai1 개인화 아트워크상품 추천
-  // PUT /api/v1/celeb-ground/{artistMemberNo}/product/openYn/{openYn} 셀럽 그라운드 상품 공개여부
-  // PUT /api/v1/celeb-ground/{artistMemberNo}/product/sortOrder 셀럽 그라운드 상품 순서변경
 
   it('', () => {
     const q = 0;
     const url = '';
+    // DELETE /api/v1/celeb-ground/{artistMemberNo}/product 셀럽 그라운드 상품 삭제
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/celeb-ground/{artistMemberNo}/product 셀럽 그라운드 상품 목록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/celeb-ground/{artistMemberNo}/product/ai1 개인화 아트워크상품 추천
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // PUT /api/v1/celeb-ground/{artistMemberNo}/product/openYn/{openYn} 셀럽 그라운드 상품 공개여부
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // PUT /api/v1/celeb-ground/{artistMemberNo}/product/sortOrder 셀럽 그라운드 상품 순서변경
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

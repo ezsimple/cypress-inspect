@@ -19,18 +19,88 @@ describe('좋아요', () => {
   });
 
   // 좋아요
-  // GET /api/v1/celeb-ground/{artistMemberNo}/art-product/like 셀럽 그라운드 아트웍 상품 좋아요 페이징
-  // GET /api/v1/celeb-ground/{artistMemberNo}/artwork/like 셀럽 그라운드 아트워크 좋아요 페이징
-  // GET /api/v1/following/celeb 팔로우한 셀럽 페이징
-  // DELETE /api/v1/like/art-product 좋아요 아트웍 상품 등록 취소
-  // POST /api/v1/like/art-product 좋아요 아트웍 상품 등록
-  // DELETE /api/v1/like/artwork 좋아요 아트워크 등록 취소
-  // POST /api/v1/like/artwork 좋아요 아트워크 등록
-  // GET /api/v1/like/sale-target 좋아요 판매 대상 페이징
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/celeb-ground/{artistMemberNo}/art-product/like 셀럽 그라운드 아트웍 상품 좋아요 페이징
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/celeb-ground/{artistMemberNo}/artwork/like 셀럽 그라운드 아트워크 좋아요 페이징
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/following/celeb 팔로우한 셀럽 페이징
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // DELETE /api/v1/like/art-product 좋아요 아트웍 상품 등록 취소
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/like/art-product 좋아요 아트웍 상품 등록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // DELETE /api/v1/like/artwork 좋아요 아트워크 등록 취소
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/like/artwork 좋아요 아트워크 등록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/like/sale-target 좋아요 판매 대상 페이징
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

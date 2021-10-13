@@ -19,14 +19,44 @@ describe('쇼핑몰 1:1문의', () => {
   });
 
   // 쇼핑몰 1:1문의
-  // GET /api/v1/buyer/inquiry 쇼핑몰 1:1문의 페이징
-  // POST /api/v1/buyer/inquiry 쇼핑몰 1:1문의 등록
-  // POST /api/v1/buyer/re-inquiry 쇼핑몰 1:1문의 재등록
-  // GET /api/v1/type-category/{typeCategoryCode}/code 유형 카테고리 코드 리스트
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/buyer/inquiry 쇼핑몰 1:1문의 페이징
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/buyer/inquiry 쇼핑몰 1:1문의 등록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/buyer/re-inquiry 쇼핑몰 1:1문의 재등록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/type-category/{typeCategoryCode}/code 유형 카테고리 코드 리스트
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

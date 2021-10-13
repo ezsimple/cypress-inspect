@@ -8,9 +8,9 @@ describe('기획전', () => {
   it('휴면계정 해제', () => {
     const url = '/api/v1/login/activate';
     const req = {
-      id: 'string',
-      resultCode: 'string',
-      resultMessage: 'string',
+      id: 'test4@upleat.com',
+      resultCode: '',
+      resultMessage: '',
     };
     post(accessToken, url, req).should((response) => {
       expect(response.status).to.eq(201);
@@ -47,8 +47,11 @@ describe('기획전', () => {
 
   it('이메일 로그인', () => {
     const url = '/api/v1/login/email';
-    const req = {};
-    post(accessToken, url, req).should((response) => {
+    const req = {
+      id: 'test5@upleat.com',
+      password: 'qwer1234',
+    };
+    post(null, url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -57,7 +60,7 @@ describe('기획전', () => {
   it('Google 로그인', () => {
     const url = '/api/v1/login/google';
     const req = {};
-    post(accessToken, url, req).should((response) => {
+    post(null, url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -74,7 +77,7 @@ describe('기획전', () => {
   it('Kakao 로그인', () => {
     const url = '/api/v1/login/kakao';
     const req = {};
-    post(accessToken, url, req).should((response) => {
+    post(null, url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -83,7 +86,7 @@ describe('기획전', () => {
   it('Naver 로그인', () => {
     const url = '/api/v1/login/naver';
     const req = {};
-    post(accessToken, url, req).should((response) => {
+    post(null, url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });

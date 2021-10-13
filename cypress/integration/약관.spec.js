@@ -19,14 +19,44 @@ describe('약관', () => {
   });
 
   // 약관
-  // GET /api/v1/terms/agreement 이용약관 조회
-  // GET /api/v1/terms/approval 개인정보 수집 및 이용동의 조회
-  // GET /api/v1/terms/payment 결제대행 서비스 이용약관
-  // GET /api/v1/terms/policy 개인정보처리방침 조회
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/terms/agreement 이용약관 조회
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/terms/approval 개인정보 수집 및 이용동의 조회
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/terms/payment 결제대행 서비스 이용약관
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/terms/policy 개인정보처리방침 조회
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

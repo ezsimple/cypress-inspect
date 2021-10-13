@@ -19,11 +19,11 @@ describe('유형 카테고리', () => {
   });
 
   // 유형 카테고리
-  // GET /api/v1/type-category/{typeCategoryCode}/code 유형 카테고리 코드 리스트
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/type-category/{typeCategoryCode}/code 유형 카테고리 코드 리스트
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

@@ -19,12 +19,22 @@ describe('셀럽 본인인증', () => {
   });
 
   // 셀럽 본인 인증
-  // GET /api/v1/celeb/auth 본인인증 정보 조회
-  // POST /api/v1/celeb/auth 본인인증 완료
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/celeb/auth 본인인증 정보 조회
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/celeb/auth 본인인증 완료
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

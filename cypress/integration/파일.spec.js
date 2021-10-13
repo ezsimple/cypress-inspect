@@ -19,11 +19,11 @@ describe('파일', () => {
   });
 
   // 파일
-  // POST /api/v1/file/download fileDownload
 
   it('', () => {
     const q = 0;
     const url = '';
+    // POST /api/v1/file/download fileDownload
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

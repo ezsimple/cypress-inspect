@@ -19,13 +19,33 @@ describe('주문/결제', () => {
   });
 
   // 주문/결제
-  // POST /api/v1/order 결제하기
-  // POST /api/v1/order/item 주문서_주문상품조회
-  // GET /api/v1/order/result/{orderNo} 주문저장결과
 
   it('', () => {
     const q = 0;
     const url = '';
+    // POST /api/v1/order 결제하기
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/order/item 주문서_주문상품조회
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/order/result/{orderNo} 주문저장결과
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

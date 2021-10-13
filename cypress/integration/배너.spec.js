@@ -19,11 +19,11 @@ describe('배너', () => {
   });
 
   // 배너
-  // GET /api/v1/banner 배너 리스트
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/banner 배너 리스트
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

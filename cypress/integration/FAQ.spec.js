@@ -19,12 +19,33 @@ describe('FAQ', () => {
   });
 
   // FAQ
-  // GET /api/v1/celeb/faq 셀럽 FAQ 페이징
-  // GET /api/v1/mall/faq 쇼핑몰 FAQ 페이징
-  // GET /api/v1/type-category/{typeCategoryCode}/code 유형 카테고리 코드 리스트
+
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/celeb/faq 셀럽 FAQ 페이징
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/mall/faq 쇼핑몰 FAQ 페이징
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/type-category/{typeCategoryCode}/code 유형 카테고리 코드 리스트
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

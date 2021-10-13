@@ -19,13 +19,33 @@ describe('카테고리', () => {
   });
 
   // 카테고리
-  // GET /api/v1/display/category 카테고리 전체 목록 조회
-  // GET /api/v1/display/category/{categoryIndex} 카테고리 목록 조회
-  // GET /api/v1/display/categoryFilter/{categoryIndex} 카테고리 필터(옵션) 목록
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/display/category 카테고리 전체 목록 조회
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/display/category/{categoryIndex} 카테고리 목록 조회
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/display/categoryFilter/{categoryIndex} 카테고리 필터(옵션) 목록
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

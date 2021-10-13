@@ -19,12 +19,22 @@ describe('비밀번호', () => {
   });
 
   // 비밀번호
-  // POST /api/v1/member/password/change 비밀번호 변경
-  // POST /api/v1/member/password/temp 임시 비밀번호 발송
 
   it('', () => {
     const q = 0;
     const url = '';
+    // POST /api/v1/member/password/change 비밀번호 변경
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/member/password/temp 임시 비밀번호 발송
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

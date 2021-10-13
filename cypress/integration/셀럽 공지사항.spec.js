@@ -19,12 +19,22 @@ describe('셀럽 공지사항', () => {
   });
 
   // 셀럽 공지사항
-  // GET /api/v1/celeb/notice 셀럽 공지사항 페이징
-  // GET /api/v1/celeb/notice/{noticeIndex} 셀럽 공지사항 단건
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/celeb/notice 셀럽 공지사항 페이징
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/celeb/notice/{noticeIndex} 셀럽 공지사항 단건
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

@@ -19,12 +19,22 @@ describe('팔로워', () => {
   });
 
   // 팔로워
-  // POST /api/v1/follow 팔로우
-  // GET /api/v1/follower 팔로워 페이징
 
   it('', () => {
     const q = 0;
     const url = '';
+    // POST /api/v1/follow 팔로우
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/follower 팔로워 페이징
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

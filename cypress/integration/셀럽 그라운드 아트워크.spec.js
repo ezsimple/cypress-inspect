@@ -19,14 +19,44 @@ describe('셀럽 그라운드 아트워크', () => {
   });
 
   // 셀럽 그라운드 아트워크
-  // DELETE /api/v1/celeb-ground/{artistMemberNo}/artwork 셀럽 그라운드 아트워크 삭제
-  // GET /api/v1/celeb-ground/{artistMemberNo}/artwork 셀럽 그라운드 아트워크 목록
-  // PUT /api/v1/celeb-ground/{artistMemberNo}/artwork/openYn/{openYn} 셀럽 그라운드 아트워크 공개여부
-  // PUT /api/v1/celeb-ground/{artistMemberNo}/artwork/sortOrder 셀럽 그라운드 아트워크 순서변경
 
   it('', () => {
     const q = 0;
     const url = '';
+    // DELETE /api/v1/celeb-ground/{artistMemberNo}/artwork 셀럽 그라운드 아트워크 삭제
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/celeb-ground/{artistMemberNo}/artwork 셀럽 그라운드 아트워크 목록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // PUT /api/v1/celeb-ground/{artistMemberNo}/artwork/openYn/{openYn} 셀럽 그라운드 아트워크 공개여부
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // PUT /api/v1/celeb-ground/{artistMemberNo}/artwork/sortOrder 셀럽 그라운드 아트워크 순서변경
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

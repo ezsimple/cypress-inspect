@@ -19,13 +19,43 @@ describe('셀럽 그라운드', () => {
   });
 
   // 셀럽 그라운드
-  // POST /api/v1/celeb-ground/ground 셀럽 그라운드 편집
-  // POST /api/v1/celeb-ground/ground/cover/fileUpload 그라운드 커버 이미지 업로드
-  // GET /api/v1/celeb-ground/ground/{shopId} 셀럽 그라운드 정보
 
   it('', () => {
     const q = 0;
     const url = '';
+    // POST /api/v1/celeb-ground/ground 셀럽 그라운드 편집
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/celeb-ground/ground/cover/fileUpload 그라운드 커버 이미지 업로드
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/celeb-ground/ground/{shopId} 셀럽 그라운드 정보
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

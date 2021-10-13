@@ -19,15 +19,55 @@ describe('아트워크 편집기', () => {
   });
 
   // 아트워크 편집기
-  // POST /api/v1/artwork/editor/cost 아트워크 편집기 - 원가 조회
-  // GET /api/v1/artwork/editor/{artworkIndex} 아트워크 편집기 - 정보 조회
-  // POST /api/v1/artwork/editor/{artworkIndex} 아트워크 편집기 - 정보 저장
-  // POST /api/v1/artwork/editor/{artworkIndex}/image/fileUpload 아트워크 편집기 - 이미지 등록
-  // POST /api/v1/artwork/new/fileUpload 신규 아트워크 등록
 
   it('', () => {
     const q = 0;
     const url = '';
+    // POST /api/v1/artwork/editor/cost 아트워크 편집기 - 원가 조회
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/artwork/editor/{artworkIndex} 아트워크 편집기 - 정보 조회
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/artwork/editor/{artworkIndex} 아트워크 편집기 - 정보 저장
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/artwork/editor/{artworkIndex}/image/fileUpload 아트워크 편집기 - 이미지 등록
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/artwork/new/fileUpload 신규 아트워크 등록
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

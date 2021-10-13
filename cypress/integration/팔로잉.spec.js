@@ -19,13 +19,33 @@ describe('팔로잉', () => {
   });
 
   // 팔로잉
-  // GET /api/v1/following 팔로잉 페이징
-  // GET /api/v1/following/celeb 팔로우한 셀럽 페이징
-  // POST /api/v1/unfollow 언팔로우
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/following 팔로잉 페이징
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/following/celeb 팔로우한 셀럽 페이징
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // POST /api/v1/unfollow 언팔로우
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

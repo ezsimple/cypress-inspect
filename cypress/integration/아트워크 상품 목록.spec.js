@@ -19,11 +19,11 @@ describe('아트워크 상품 목록', () => {
   });
 
   // 아트워크 상품 목록
-  // GET /api/v1/art-product/productList 아트워크 상품 목록
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/art-product/productList 아트워크 상품 목록
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

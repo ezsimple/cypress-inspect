@@ -19,12 +19,22 @@ describe('쇼핑몰 공지사항', () => {
   });
 
   // 쇼핑몰 공지사항
-  // GET /api/v1/mall/notice 쇼핑몰 공지사항 페이징
-  // GET /api/v1/mall/notice/{noticeIndex} 쇼핑몰 공지사항 단건
 
   it('', () => {
     const q = 0;
     const url = '';
+    // GET /api/v1/mall/notice 쇼핑몰 공지사항 페이징
+    const req = {};
+    get(token, url, null).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('', () => {
+    const q = 0;
+    const url = '';
+    // GET /api/v1/mall/notice/{noticeIndex} 쇼핑몰 공지사항 단건
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
