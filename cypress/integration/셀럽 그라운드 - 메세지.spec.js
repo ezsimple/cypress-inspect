@@ -1,7 +1,6 @@
-import { login, getToken, del, get, post, prettyJSON } from '../libs/common';
+import { del, get, login, post, prettyJSON } from '../libs/common';
 
 describe('셀럽 그라운드 - 메세지', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('셀럽 그라운드 - 메세지', () => {
     const q = 0;
     const url = '/api/v1/celeb-ground/message';
     const req = {};
-    del(token, url, null).should((response) => {
+    del(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -22,7 +21,7 @@ describe('셀럽 그라운드 - 메세지', () => {
     const q = 0;
     const url = '/api/v1/celeb-ground/message';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -32,7 +31,7 @@ describe('셀럽 그라운드 - 메세지', () => {
     const q = 0;
     const url = '/api/v1/celeb-ground/message';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -42,7 +41,7 @@ describe('셀럽 그라운드 - 메세지', () => {
     const q = 0;
     const url = '/api/v1/celeb-ground/message/{artistMessageIndex}';
     const req = {};
-    del(token, url, null).should((response) => {
+    del(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

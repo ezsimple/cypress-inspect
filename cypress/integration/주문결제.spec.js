@@ -1,7 +1,6 @@
-import { login, getToken, get, post, prettyJSON } from '../libs/common';
+import { get, login, post, prettyJSON } from '../libs/common';
 
 describe('주문/결제', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('주문/결제', () => {
     const q = 0;
     const url = '/api/v1/order';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -22,7 +21,7 @@ describe('주문/결제', () => {
     const q = 0;
     const url = '/api/v1/order/item';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -32,7 +31,7 @@ describe('주문/결제', () => {
     const q = 0;
     const url = '/api/v1/order/result/{orderNo}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

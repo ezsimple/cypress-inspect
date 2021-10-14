@@ -1,7 +1,6 @@
-import { login, del, get, post, prettyJSON, put } from '../libs/common';
+import { del, get, login, post, prettyJSON, put } from '../libs/common';
 
 describe('이벤트', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/current';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -22,7 +21,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/current/basic/{eventIndex}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -32,7 +31,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/current/comment';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -42,7 +41,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/current/comment/{applyIndex}';
     const req = {};
-    del(token, url, null).should((response) => {
+    del(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -52,7 +51,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/current/comment/{applyIndex}';
     const req = {};
-    put(token, url, null).should((response) => {
+    put(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -62,7 +61,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/current/comment/{eventIndex}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -72,7 +71,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/current/coupon/{eventIndex}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -82,7 +81,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/current/entry';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -92,7 +91,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/current/entry/form/{eventIndex}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -102,7 +101,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/current/entry/{eventIndex}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -112,7 +111,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/old';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -122,7 +121,7 @@ describe('이벤트', () => {
     const q = 0;
     const url = '/api/v1/event/old/entry/{eventIndex}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

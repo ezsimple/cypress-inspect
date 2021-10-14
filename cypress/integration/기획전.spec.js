@@ -1,7 +1,6 @@
-import { login, getToken, get, prettyJSON } from '../libs/common';
+import { get, login, prettyJSON } from '../libs/common';
 
 describe('기획전', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -9,7 +8,8 @@ describe('기획전', () => {
   it('기획전상세(상품)', () => {
     const index = 38;
     const url = '/api/v1/exhibition/artProduct/' + index;
-    get(token, url, null).should((response) => {
+    const req = {};
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
       const { exhibitionIndex } = response.body.detailItem;
@@ -20,7 +20,8 @@ describe('기획전', () => {
   it('기획전상세(작품)', () => {
     const index = 38;
     const url = '/api/v1/exhibition/artwork/' + index;
-    get(token, url, null).should((response) => {
+    const req = {};
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
       const { exhibitionIndex } = response.body.detailItem;
@@ -30,7 +31,8 @@ describe('기획전', () => {
 
   it('기획전 목록', () => {
     const url = '/api/v1/exhibition/list';
-    get(token, url, null).should((response) => {
+    const req = {};
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

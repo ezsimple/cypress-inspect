@@ -1,7 +1,6 @@
-import { login, getToken, get, prettyJSON } from '../libs/common';
+import { get, login, prettyJSON } from '../libs/common';
 
 describe('쇼핑몰 공지사항', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('쇼핑몰 공지사항', () => {
     const q = 0;
     const url = '/api/v1/mall/notice';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -22,7 +21,7 @@ describe('쇼핑몰 공지사항', () => {
     const q = 0;
     const url = '/api/v1/mall/notice/{noticeIndex}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

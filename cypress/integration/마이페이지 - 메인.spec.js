@@ -1,7 +1,6 @@
-import { login, getToken, get, post, prettyJSON } from '../libs/common';
+import { get, login, post, prettyJSON } from '../libs/common';
 
 describe('마이페이지 - 메인', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('마이페이지 - 메인', () => {
     const q = 0;
     const url = '/api/v1/member/info';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -22,7 +21,7 @@ describe('마이페이지 - 메인', () => {
     const q = 0;
     const url = '/api/v1/member/profile';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -32,7 +31,7 @@ describe('마이페이지 - 메인', () => {
     const q = 0;
     const url = '/api/v1/member/profile';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -42,7 +41,7 @@ describe('마이페이지 - 메인', () => {
     const q = 0;
     const url = '/api/v1/member/profile/image/fileUpload';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });

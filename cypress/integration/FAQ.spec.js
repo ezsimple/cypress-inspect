@@ -1,7 +1,6 @@
-import { login, get, getToken, prettyJSON } from '../libs/common';
+import { get, login, prettyJSON } from '../libs/common';
 
 describe('FAQ', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('FAQ', () => {
     const q = 0;
     const url = '/api/v1/celeb/faq';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -22,7 +21,7 @@ describe('FAQ', () => {
     const q = 0;
     const url = '/api/v1/mall/faq';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -32,7 +31,7 @@ describe('FAQ', () => {
     const q = 0;
     const url = '/api/v1/type-category/{typeCategoryCode}/code';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

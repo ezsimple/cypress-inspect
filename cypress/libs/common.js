@@ -24,50 +24,50 @@ export function login(url, req) {
   );
 }
 
-export function getToken(token) {
-  return token ? token : Cypress.env('token');
+export function getToken() {
+  return Cypress.env('token');
   // JSON.stringify(window.sessionStorage.getItem('x-oround-token')); // 동기화 시킬수 없음
 }
 
-export function get(token, url, req) {
+export function get(url, req) {
   return cy.request({
     method: 'GET',
     url: url,
     headers: {
-      'x-oround-token': getToken(token),
+      'x-oround-token': getToken(),
     },
     body: req,
   });
 }
 
-export function post(token, url, req) {
+export function post(url, req) {
   return cy.request({
     method: 'POST',
     url: url,
     headers: {
-      'x-oround-token': getToken(token),
+      'x-oround-token': getToken(),
     },
     body: req,
   });
 }
 
-export function put(token, url, req) {
+export function put(url, req) {
   return cy.request({
     method: 'PUT',
     url: url,
     headers: {
-      'x-oround-token': getToken(token),
+      'x-oround-token': getToken(),
     },
     body: req,
   });
 }
 
-export function del(token, url, req) {
+export function del(url, req) {
   return cy.request({
     method: 'DELETE',
     url: url,
     headers: {
-      'x-oround-token': getToken(token),
+      'x-oround-token': getToken(),
     },
     body: req,
   });

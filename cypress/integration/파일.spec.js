@@ -1,7 +1,6 @@
-import { login, getToken, post, prettyJSON } from '../libs/common';
+import { login, post, prettyJSON } from '../libs/common';
 
 describe('파일', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('파일', () => {
     const q = 0;
     const url = '/api/v1/file/download';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });

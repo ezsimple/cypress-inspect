@@ -1,7 +1,6 @@
 import { get, login, post, prettyJSON, put } from '../libs/common';
 
 describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     const q = 0;
     const url = '/api/v1/orderHistory';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -22,7 +21,7 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     const q = 0;
     const url = '/api/v1/orderShipping';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -32,7 +31,7 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     const q = 0;
     const url = '/api/v1/orderShipping/cancel';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -42,7 +41,7 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     const q = 0;
     const url = '/api/v1/orderShipping/cancel/{orderNo}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -52,7 +51,7 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     const q = 0;
     const url = '/api/v1/orderShipping/exchange';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -62,7 +61,7 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     const q = 0;
     const url = '/api/v1/orderShipping/exchange/{orderNo}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -72,7 +71,7 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     const q = 0;
     const url = '/api/v1/orderShipping/shippingInfo';
     const req = {};
-    put(token, url, null).should((response) => {
+    put(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -82,7 +81,7 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     const q = 0;
     const url = '/api/v1/orderShipping/{orderNo}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -92,7 +91,7 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     const q = 0;
     const url = '/api/v1/orderShippping/exchange/image/fileUpload';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -102,7 +101,7 @@ describe('마이페이지 - 쇼핑내역 주문배송조회', () => {
     const q = 0;
     const url = '/api/v1/orderShippping/returning/image/fileUpload';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });

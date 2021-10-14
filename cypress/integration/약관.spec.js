@@ -1,7 +1,6 @@
-import { login, getToken, get, prettyJSON } from '../libs/common';
+import { get, login, prettyJSON } from '../libs/common';
 
 describe('약관', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('약관', () => {
     const q = 0;
     const url = '/api/v1/terms/agreement';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -22,7 +21,7 @@ describe('약관', () => {
     const q = 0;
     const url = '/api/v1/terms/approval';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -32,7 +31,7 @@ describe('약관', () => {
     const q = 0;
     const url = '/api/v1/terms/payment';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -42,7 +41,7 @@ describe('약관', () => {
     const q = 0;
     const url = '/api/v1/terms/policy';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

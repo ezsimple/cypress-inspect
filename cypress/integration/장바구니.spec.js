@@ -1,7 +1,6 @@
-import { get, login, getToken, post, prettyJSON, put } from '../libs/common';
+import { get, login, post, prettyJSON, put } from '../libs/common';
 
 describe('장바구니', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('장바구니', () => {
     const q = 0;
     const url = '/api/v1/orderCart';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -35,7 +34,7 @@ describe('장바구니', () => {
         },
       ],
     };
-    post(token, url, req).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -45,7 +44,7 @@ describe('장바구니', () => {
     const q = 0;
     const url = '/api/v1/orderCart';
     const req = {};
-    put(token, url, req).should((response) => {
+    put(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -55,7 +54,7 @@ describe('장바구니', () => {
     const cartIndex = 7;
     const url = '/api/v1/orderCart/options/' + cartIndex;
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

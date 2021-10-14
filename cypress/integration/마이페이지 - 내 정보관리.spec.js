@@ -1,15 +1,6 @@
-import {
-  login,
-  getToken,
-  get,
-  post,
-  put,
-  del,
-  prettyJSON,
-} from '../libs/common';
+import { del, get, login, post, prettyJSON, put } from '../libs/common';
 
 describe('마이페이지 - 내 정보관리', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -20,7 +11,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/myInfo/changeEmail';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -30,7 +21,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/myInfo/changeName';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -40,7 +31,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/myInfo/changePhone';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -50,7 +41,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/myInfo/checkPassword';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -60,7 +51,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/myInfo/language';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -70,7 +61,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/myInfo/personalInfo';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -80,7 +71,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/myInfo/verify/email/confirm';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -90,7 +81,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/myInfo/verify/email/send';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -100,7 +91,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/myInfo/verify/phone/send';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -110,7 +101,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/myInfo/withdraw';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -120,7 +111,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/password/change';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -130,7 +121,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/shipping';
     const req = {};
-    del(token, url, null).should((response) => {
+    del(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -140,7 +131,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/shipping';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -150,7 +141,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/shipping';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -160,7 +151,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/shipping';
     const req = {};
-    put(token, url, null).should((response) => {
+    put(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -170,7 +161,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const q = 0;
     const url = '/api/v1/member/shipping/nation/{shippingAreaCode}';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

@@ -1,7 +1,6 @@
-import { login, getToken, get, post, prettyJSON } from '../libs/common';
+import { get, login, post, prettyJSON } from '../libs/common';
 
 describe('회원가입', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -13,7 +12,7 @@ describe('회원가입', () => {
     const url = '';
     // POST /api/v1/member/check/id 아이디 중복 확인
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -24,7 +23,7 @@ describe('회원가입', () => {
     const url = '';
     // POST /api/v1/member/check/name 이름 중복 확인
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -35,7 +34,7 @@ describe('회원가입', () => {
     const url = '';
     // POST /api/v1/member/check/sns SNS 회원 정보 확인
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -46,7 +45,7 @@ describe('회원가입', () => {
     const url = '';
     // POST /api/v1/member/join 회원 가입 요청
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -57,7 +56,7 @@ describe('회원가입', () => {
     const url = '';
     // POST /api/v1/member/verify/email/confirm 이메일 인증코드 확인
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -67,7 +66,7 @@ describe('회원가입', () => {
     const q = 0;
     const url = '/api/v1/member/verify/email/send';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });

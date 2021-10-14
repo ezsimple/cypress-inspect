@@ -1,7 +1,6 @@
-import { login, getToken, get, prettyJSON } from '../libs/common';
+import { get, login, prettyJSON } from '../libs/common';
 
 describe('유형 카테고리', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('유형 카테고리', () => {
     const q = 0;
     const url = '/api/v1/type-category/{typeCategoryCode}/code';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });

@@ -1,7 +1,6 @@
 import { getToken, login, post, prettyJSON } from '../libs/common';
 
 describe('비밀번호', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -12,7 +11,7 @@ describe('비밀번호', () => {
     const q = 0;
     const url = '/api/v1/member/password/change';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -22,7 +21,7 @@ describe('비밀번호', () => {
     const q = 0;
     const url = '/api/v1/member/password/temp';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });

@@ -1,15 +1,6 @@
-import {
-  login,
-  getToken,
-  del,
-  get,
-  post,
-  prettyJSON,
-  put,
-} from '../libs/common';
+import { del, get, login, post, prettyJSON, put } from '../libs/common';
 
 describe('쿠폰', () => {
-  const token = getToken();
   before(() => {
     login();
   });
@@ -20,7 +11,7 @@ describe('쿠폰', () => {
     const q = 0;
     const url = '/api/v1/art-product/coupon/download';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -30,7 +21,7 @@ describe('쿠폰', () => {
     const q = 0;
     const url = '/api/v1/art-product/{artProductIndex}/download/coupon';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -40,7 +31,7 @@ describe('쿠폰', () => {
     const q = 0;
     const url = '/api/v1/celeb/coupon';
     const req = {};
-    del(token, url, null).should((response) => {
+    del(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -50,7 +41,7 @@ describe('쿠폰', () => {
     const q = 0;
     const url = '/api/v1/celeb/coupon';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -60,7 +51,7 @@ describe('쿠폰', () => {
     const q = 0;
     const url = '/api/v1/celeb/coupon';
     const req = {};
-    post(token, url, null).should((response) => {
+    post(url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -70,7 +61,7 @@ describe('쿠폰', () => {
     const q = 0;
     const url = '/api/v1/celeb/coupon/stop';
     const req = {};
-    put(token, url, null).should((response) => {
+    put(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
@@ -80,7 +71,7 @@ describe('쿠폰', () => {
     const q = 0;
     const url = '/api/v1/mypage/coupon';
     const req = {};
-    get(token, url, null).should((response) => {
+    get(url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
