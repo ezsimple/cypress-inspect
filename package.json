@@ -3,7 +3,8 @@
     "start": "cypress open"
   },
   "devDependencies": {
-    "cypress": "8.6.0"
+    "cypress": "8.6.0",
+    "cypress-wait-until": "^1.7.1"
   },
   "dependencies": {}
 }

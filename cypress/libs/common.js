@@ -3,16 +3,26 @@ export function prettyJSON(response) {
 }
 
 export function login(url, req) {
-  let token = JSON.stringify(window.sessionStorage.getItem('x-oround-token'));
   cy.request({
     method: 'POST',
     url: url ? url : '/api/v1/login/email',
     body: req ? req : { id: 'test5@upleat.com', password: 'qwer1234' },
   }).then(({ body }) => {
     window.sessionStorage.setItem('x-oround-token', body.token.accessToken);
-    token = body.token.accessToken;
   });
-  return token;
+  cy.waitUntil(() =>
+    cy
+      .window()
+      .its('sessionStorage')
+      .invoke('getItem', 'x-oround-token')
+      .should('exist')
+  );
+}
+
+function getToken(token) {
+  return token
+    ? token
+    : JSON.stringify(window.sessionStorage.getItem('x-oround-token'));
 }
 
 export function get(token, url, req) {
@@ -20,7 +30,7 @@ export function get(token, url, req) {
     method: 'GET',
     url: url,
     headers: {
-      'x-oround-token': token,
+      'x-oround-token': getToken(token),
     },
     body: req,
   });
@@ -31,7 +41,7 @@ export function post(token, url, req) {
     method: 'POST',
     url: url,
     headers: {
-      'x-oround-token': token,
+      'x-oround-token': getToken(token),
     },
     body: req,
   });
@@ -42,7 +52,7 @@ export function put(token, url, req) {
     method: 'PUT',
     url: url,
     headers: {
-      'x-oround-token': token,
+      'x-oround-token': getToken(token),
     },
     body: req,
   });
@@ -53,7 +63,7 @@ export function del(token, url, req) {
     method: 'DELETE',
     url: url,
     headers: {
-      'x-oround-token': token,
+      'x-oround-token': getToken(token),
     },
     body: req,
   });

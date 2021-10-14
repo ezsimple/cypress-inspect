@@ -1,4 +1,4 @@
-import { get, prettyJSON } from '../libs/common';
+import { login, get, prettyJSON } from '../libs/common';
 
 describe('공통 API', () => {
   let timeOut = 5000; // connection Timeout seconds
