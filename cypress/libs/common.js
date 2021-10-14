@@ -1,3 +1,5 @@
+import 'cypress-wait-until';
+
 export function prettyJSON(response) {
   return JSON.stringify(response.body, null, 2);
 }
