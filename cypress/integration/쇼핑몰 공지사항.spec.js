@@ -1,4 +1,4 @@
-import { login, get, post, put, del, prettyJSON } from '../libs/InspectLib';
+import { login, get, post, put, del, prettyJSON } from '../libs/common';
 
 describe('쇼핑몰 공지사항', () => {
   let timeOut = 5000; // connection Timeout seconds
