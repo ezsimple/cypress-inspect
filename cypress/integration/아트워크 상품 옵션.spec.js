@@ -1,6 +1,6 @@
 import { login, get, post, put, del, prettyJSON } from '../libs/common';
 
-describe('상품 마스터', () => {
+describe('아트워크 상품 옵션(★)', () => {
   let timeOut = 5000; // connection Timeout seconds
   let token = null;
 
@@ -18,9 +18,9 @@ describe('상품 마스터', () => {
     }
   });
 
-  it('상품 마스터 기본정보', () => {
-    const productCode = 1030010001;
-    const url = '/api/v1/product/master/' + productCode + '/info';
+  it('사용자 선택 옵션', () => {
+    const q = '44';
+    const url = '/api/v1/art-product/' + q + '/options';
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));

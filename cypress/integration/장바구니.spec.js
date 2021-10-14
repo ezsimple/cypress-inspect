@@ -10,7 +10,7 @@ describe('장바구니', () => {
       cy.request({
         method: 'POST',
         url: '/api/v1/login/email',
-        body: { id: 'test5@upleat.com', password: 'qwer1234' },
+        body: { id: 'test@upleat.com', password: 'qwer1234' },
       }).then(({ body }) => {
         window.sessionStorage.setItem('x-oround-token', body.token.accessToken);
         token = body.token.accessToken;
@@ -33,8 +33,21 @@ describe('장바구니', () => {
   it('장바구니 저장', () => {
     const q = 0;
     const url = '/api/v1/orderCart';
-    const req = {};
-    post(token, url, null).should((response) => {
+    const req = {
+      insertCartList: [
+        {
+          productCode: 'string',
+          artProductIndex: 0,
+          insertCartOptionList: [
+            {
+              optionMappingIndex: 0,
+            },
+          ],
+          quantity: 0,
+        },
+      ],
+    };
+    post(token, url, req).should((response) => {
       expect(response.status).to.eq(201);
       console.log(prettyJSON(response));
     });
@@ -44,15 +57,15 @@ describe('장바구니', () => {
     const q = 0;
     const url = '/api/v1/orderCart';
     const req = {};
-    put(token, url, null).should((response) => {
+    put(token, url, req).should((response) => {
       expect(response.status).to.eq(200);
       console.log(prettyJSON(response));
     });
   });
 
   it('장바구니 수정화면 상품 옵션 목록', () => {
-    const q = 0;
-    const url = '/api/v1/orderCart/options/{cartIndex}';
+    const cartIndex = 7;
+    const url = '/api/v1/orderCart/options/' + cartIndex;
     const req = {};
     get(token, url, null).should((response) => {
       expect(response.status).to.eq(200);

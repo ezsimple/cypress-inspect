@@ -1,4 +1,4 @@
-import { get, prettyJSON } from '../libs/InspectLib';
+import { get, prettyJSON } from '../libs/common';
 
 describe('아트워크 상품 상세', () => {
   let timeOut = 5000; // connection Timeout seconds
