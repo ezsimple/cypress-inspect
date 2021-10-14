@@ -3,9 +3,7 @@ import { del, get, post, prettyJSON, put } from '../libs/common';
 describe('이벤트', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 이벤트

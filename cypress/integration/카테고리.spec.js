@@ -3,9 +3,7 @@ import { getToken, get, prettyJSON } from '../libs/common';
 describe('카테고리', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 카테고리

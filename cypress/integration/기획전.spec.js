@@ -3,9 +3,7 @@ import { get, getToken, prettyJSON } from '../libs/common';
 describe('기획전', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   it('기획전상세(상품)', () => {

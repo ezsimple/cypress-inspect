@@ -3,9 +3,7 @@ import { getToken, del, get, post, prettyJSON } from '../libs/common';
 describe('좋아요', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 좋아요

@@ -3,9 +3,7 @@ import { getToken, post, prettyJSON } from '../libs/common';
 describe('파일', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 파일

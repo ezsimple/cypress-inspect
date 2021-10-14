@@ -3,9 +3,7 @@ import { getToken, get, prettyJSON } from '../libs/common';
 describe('셀럽 공지사항', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 셀럽 공지사항

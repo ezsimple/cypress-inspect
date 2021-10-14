@@ -3,9 +3,7 @@ import { login, getToken, get, prettyJSON } from '../libs/common';
 describe('공통 API', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   it('공통코드 List', () => {

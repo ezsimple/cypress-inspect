@@ -11,9 +11,7 @@ import {
 describe('마이페이지 - 내 정보관리', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 마이페이지 - 내 정보관리

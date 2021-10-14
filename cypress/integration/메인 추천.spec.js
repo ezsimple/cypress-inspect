@@ -3,9 +3,7 @@ import { get, login, prettyJSON } from '../libs/common';
 describe('메인 추천', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 메인 추천(작업중)

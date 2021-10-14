@@ -5,9 +5,7 @@ describe('셀럽 기획전', () => {
   let exhibitionIndex = 1;
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   it('아티스트별 기획전 대상 아트워크 상품 목록(페이징)', () => {

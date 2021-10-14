@@ -3,9 +3,7 @@ import { getToken, del, get, post, prettyJSON } from '../libs/common';
 describe('셀럽 그라운드 - 메세지', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 셀럽 그라운드 - 메세지

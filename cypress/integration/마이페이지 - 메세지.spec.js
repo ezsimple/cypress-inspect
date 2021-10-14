@@ -3,9 +3,7 @@ import { del, get, getToken, login, prettyJSON } from '../libs/common';
 describe('마이페이지 - 메세지', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 마이페이지 - 메세지

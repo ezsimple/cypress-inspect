@@ -3,9 +3,7 @@ import { getToken, get, post, prettyJSON } from '../libs/common';
 describe('회원가입', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 회원가입

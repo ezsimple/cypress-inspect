@@ -3,9 +3,7 @@ import { getToken, login, post, prettyJSON } from '../libs/common';
 describe('비밀번호', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 비밀번호

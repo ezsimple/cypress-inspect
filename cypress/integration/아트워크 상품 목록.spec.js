@@ -3,9 +3,7 @@ import { getToken, get, prettyJSON } from '../libs/common';
 describe('아트워크 상품 목록', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 아트워크 상품 목록

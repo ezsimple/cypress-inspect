@@ -5,9 +5,7 @@ describe('리뷰', () => {
   const artistMemberNo = 5;
 
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   it('아트웍 상품 베스트 리뷰 페이징', () => {

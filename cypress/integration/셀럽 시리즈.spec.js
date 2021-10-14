@@ -5,9 +5,7 @@ describe('셀럽 시리즈', () => {
   let seriesIndex = 1;
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   it('아티스트별 시리즈 대상 아트워크 상품 목록(페이징)', () => {

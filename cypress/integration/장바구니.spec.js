@@ -3,9 +3,7 @@ import { get, login, post, prettyJSON, put } from '../libs/common';
 describe('장바구니', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 장바구니

@@ -3,9 +3,7 @@ import { get, prettyJSON } from '../libs/common';
 describe('회원 포인트', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 회원포인트

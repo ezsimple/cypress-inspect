@@ -3,9 +3,7 @@ import { getToken, get, post, prettyJSON } from '../libs/common';
 describe('셀럽 본인인증', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 셀럽 본인 인증

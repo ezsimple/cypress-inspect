@@ -3,9 +3,7 @@ import { getToken, get, login, prettyJSON } from '../libs/common';
 describe('배너', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 배너

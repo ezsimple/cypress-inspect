@@ -3,9 +3,7 @@ import { getToken, get, prettyJSON } from '../libs/InspectLib';
 describe('아트워크', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   it('아트워크 기본 정보', () => {

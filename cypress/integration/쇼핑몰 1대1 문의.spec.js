@@ -3,9 +3,7 @@ import { getToken, get, post, prettyJSON } from '../libs/common';
 describe('쇼핑몰 1:1문의', () => {
   const token = getToken();
   before(() => {
-    if (!token) {
-      login();
-    }
+    login();
   });
 
   // 쇼핑몰 1:1문의

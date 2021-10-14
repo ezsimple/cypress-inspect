@@ -1,7 +1,6 @@
 import { get, post, prettyJSON } from '../libs/common';
 
 describe('기획전', () => {
-  let timeOut = 5000; // connection Timeout seconds
   let accessToken = null;
   let refreshToken = null;
 
