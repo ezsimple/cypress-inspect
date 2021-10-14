@@ -1,4 +1,4 @@
-import { get, login, prettyJSON } from '../libs/InspectLib';
+import { get, login, prettyJSON } from '../libs/common';
 
 describe('아트워크', () => {
   before(() => {
@@ -6,7 +6,7 @@ describe('아트워크', () => {
   });
 
   it('아트워크 기본 정보', () => {
-    const artworkIndex = 44;
+    const artworkIndex = 55;
     const url = '/api/v1/artwork/' + artworkIndex + '/info';
     const req = {};
     get(url, req).should((response) => {
