@@ -19,11 +19,13 @@ describe('아트워크 상품 옵션(★)', () => {
   });
 
   it('사용자 선택 옵션', () => {
-    const q = '44';
-    const url = '/api/v1/art-product/' + q + '/options';
-    get(token, url, null).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
+    const artProducts = new Set([44, 50, 52]);
+    for (const o of artProducts) {
+      const url = '/api/v1/art-product/' + o + '/options';
+      get(token, url, null).should((response) => {
+        expect(response.status).to.eq(200);
+        console.log(prettyJSON(response));
+      });
+    }
   });
 });
