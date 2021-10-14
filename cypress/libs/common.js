@@ -8,7 +8,7 @@ export function login(url, req) {
     url: url ? url : '/api/v1/login/email',
     body: req ? req : { id: 'test5@upleat.com', password: 'qwer1234' },
   }).then(({ body }) => {
-    window.sessionStorage.setItem('x-oround-token', body.token.accessToken);
+    windows.sessionStorage.setItem('x-oround-token', body.token.accessToken);
   });
   cy.waitUntil(() =>
     cy
@@ -19,7 +19,7 @@ export function login(url, req) {
   );
 }
 
-function getToken(token) {
+export function getToken(token) {
   return token
     ? token
     : JSON.stringify(window.sessionStorage.getItem('x-oround-token'));

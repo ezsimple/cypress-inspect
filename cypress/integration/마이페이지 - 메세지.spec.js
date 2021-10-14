@@ -1,20 +1,10 @@
-import { login, get, post, put, del, prettyJSON } from '../libs/common';
+import { del, get, getToken, login, prettyJSON } from '../libs/common';
 
 describe('마이페이지 - 메세지', () => {
-  let timeOut = 5000; // connection Timeout seconds
-  let token = null;
-
+  const token = getToken();
   before(() => {
     if (!token) {
-      token = JSON.stringify(window.sessionStorage.getItem('x-oround-token'));
-      cy.request({
-        method: 'POST',
-        url: '/api/v1/login/email',
-        body: { id: 'test5@upleat.com', password: 'qwer1234' },
-      }).then(({ body }) => {
-        window.sessionStorage.setItem('x-oround-token', body.token.accessToken);
-        token = body.token.accessToken;
-      });
+      login();
     }
   });
 

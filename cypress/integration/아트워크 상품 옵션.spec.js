@@ -1,10 +1,16 @@
-import { login, get, post, put, del, prettyJSON } from '../libs/common';
+import {
+  login,
+  getToken,
+  get,
+  post,
+  put,
+  del,
+  prettyJSON,
+} from '../libs/common';
 
 describe('아트워크 상품 옵션(★)', () => {
-  let timeOut = 5000; // connection Timeout seconds
-  let token = null;
-
   before(() => {
+    const token = getToken();
     if (!token) {
       login();
     }
