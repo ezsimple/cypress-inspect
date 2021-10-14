@@ -1,4 +1,4 @@
-import { getToken, login, post, prettyJSON } from '../libs/common';
+import { login, post, prettyJSON } from '../libs/common';
 
 describe('비밀번호', () => {
   before(() => {
