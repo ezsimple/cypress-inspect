@@ -1,4 +1,12 @@
-import { getToken, del, get, post, prettyJSON, put } from '../libs/common';
+import {
+  login,
+  getToken,
+  del,
+  get,
+  post,
+  prettyJSON,
+  put,
+} from '../libs/common';
 
 describe('쿠폰', () => {
   const token = getToken();

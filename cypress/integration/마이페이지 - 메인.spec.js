@@ -1,4 +1,4 @@
-import { getToken, get, post, prettyJSON } from '../libs/common';
+import { login, getToken, get, post, prettyJSON } from '../libs/common';
 
 describe('마이페이지 - 메인', () => {
   const token = getToken();

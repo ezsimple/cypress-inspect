@@ -1,4 +1,4 @@
-import { getToken, get, prettyJSON } from '../libs/InspectLib';
+import { login, getToken, get, prettyJSON } from '../libs/InspectLib';
 
 describe('아트워크', () => {
   const token = getToken();

@@ -1,8 +1,17 @@
-import { getToken, del, get, post, prettyJSON, put } from '../libs/common';
+import {
+  login,
+  getToken,
+  del,
+  get,
+  post,
+  prettyJSON,
+  put,
+} from '../libs/common';
 
 describe('셀럽 기획전', () => {
   const artistMemberNo = 5;
   let exhibitionIndex = 1;
+
   const token = getToken();
   before(() => {
     login();

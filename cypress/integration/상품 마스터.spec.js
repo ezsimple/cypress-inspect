@@ -1,4 +1,4 @@
-import { getToken, get, prettyJSON } from '../libs/common';
+import { login, getToken, get, prettyJSON } from '../libs/common';
 
 describe('상품 마스터', () => {
   const token = getToken();

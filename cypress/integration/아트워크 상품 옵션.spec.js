@@ -1,4 +1,4 @@
-import { get, getToken, login, prettyJSON } from '../libs/common';
+import { login, get, getToken, login, prettyJSON } from '../libs/common';
 
 describe('아트워크 상품 옵션(★)', () => {
   const token = getToken();

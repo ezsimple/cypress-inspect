@@ -1,4 +1,4 @@
-import { getToken, get, prettyJSON } from '../libs/common';
+import { login, get, getToken, prettyJSON } from '../libs/common';
 
 describe('FAQ', () => {
   const token = getToken();

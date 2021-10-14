@@ -1,4 +1,4 @@
-import { getToken, del, get, prettyJSON, put } from '../libs/common';
+import { login, getToken, del, get, prettyJSON, put } from '../libs/common';
 
 describe('셀럽 그라운드 아트워크', () => {
   const token = getToken();
