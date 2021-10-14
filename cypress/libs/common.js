@@ -3,12 +3,17 @@ export function prettyJSON(response) {
 }
 
 export function login(url, req) {
+  // 토큰이 invalid할 경우 처리가 안됩니다.
+  // const token = JSON.stringify(window.sessionStorage.getItem('x-oround-token'));
+  // if (token) return;
   cy.request({
     method: 'POST',
     url: url ? url : '/api/v1/login/email',
     body: req ? req : { id: 'test5@upleat.com', password: 'qwer1234' },
   }).then(({ body }) => {
-    window.sessionStorage.setItem('x-oround-token', body.token.accessToken);
+    const { accessToken } = body.token;
+    window.sessionStorage.setItem('x-oround-token', accessToken); // 동기화 시킬수 없음
+    Cypress.env('token', accessToken);
   });
   cy.waitUntil(() =>
     cy
@@ -20,9 +25,8 @@ export function login(url, req) {
 }
 
 export function getToken(token) {
-  return token
-    ? token
-    : JSON.stringify(window.sessionStorage.getItem('x-oround-token'));
+  return token ? token : Cypress.env('token');
+  // JSON.stringify(window.sessionStorage.getItem('x-oround-token')); // 동기화 시킬수 없음
 }
 
 export function get(token, url, req) {
