@@ -1,4 +1,4 @@
-import { del, get, login, post, prettyJSON, put } from '../libs/common';
+import { del, get, login, post, prettyJSON, put } from '../../libs/common';
 
 describe('마이페이지 - 내 정보관리', () => {
   before(() => {

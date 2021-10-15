@@ -1,4 +1,4 @@
-import { get, login, post, prettyJSON } from '../libs/common';
+import { get, login, post, prettyJSON } from '../../libs/common';
 
 describe('주문/결제', () => {
   before(() => {

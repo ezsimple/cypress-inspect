@@ -1,4 +1,4 @@
-import { get, login, prettyJSON } from '../libs/common';
+import { get, login, prettyJSON } from '../../libs/common';
 
 describe('약관', () => {
   before(() => {

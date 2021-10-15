@@ -1,4 +1,4 @@
-import { get, login, prettyJSON } from '../libs/common';
+import { get, login, prettyJSON } from '../../libs/common';
 
 describe('회원 포인트', () => {
   before(() => {

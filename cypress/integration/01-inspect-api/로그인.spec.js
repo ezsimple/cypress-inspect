@@ -1,4 +1,4 @@
-import { get, post, prettyJSON } from '../libs/common';
+import { get, post, prettyJSON } from '../../libs/common';
 
 describe('기획전', () => {
   it('휴면계정 해제', () => {

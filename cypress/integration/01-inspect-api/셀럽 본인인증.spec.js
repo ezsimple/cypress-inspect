@@ -1,4 +1,4 @@
-import { get, login, post, prettyJSON } from '../libs/common';
+import { get, login, post, prettyJSON } from '../../libs/common';
 
 describe('셀럽 본인인증', () => {
   before(() => {

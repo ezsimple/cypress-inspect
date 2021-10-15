@@ -1,4 +1,4 @@
-import { del, get, login, prettyJSON, put } from '../libs/common';
+import { del, get, login, prettyJSON, put } from '../../libs/common';
 
 describe('셀럽 그라운드 상품', () => {
   before(() => {

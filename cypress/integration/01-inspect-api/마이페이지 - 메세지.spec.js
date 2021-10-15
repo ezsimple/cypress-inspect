@@ -1,4 +1,4 @@
-import { del, get, login, prettyJSON } from '../libs/common';
+import { del, get, login, prettyJSON } from '../../libs/common';
 
 describe('마이페이지 - 메세지', () => {
   before(() => {

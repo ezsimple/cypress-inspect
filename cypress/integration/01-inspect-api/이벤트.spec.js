@@ -1,4 +1,4 @@
-import { del, get, login, post, prettyJSON, put } from '../libs/common';
+import { del, get, login, post, prettyJSON, put } from '../../libs/common';
 
 describe('이벤트', () => {
   before(() => {

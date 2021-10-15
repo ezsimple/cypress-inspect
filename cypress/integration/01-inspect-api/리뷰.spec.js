@@ -1,4 +1,4 @@
-import { del, get, login, post, prettyJSON } from '../libs/common';
+import { del, get, login, post, prettyJSON } from '../../libs/common';
 
 describe('리뷰', () => {
   const artistMemberNo = 5;

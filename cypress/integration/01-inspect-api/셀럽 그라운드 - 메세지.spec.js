@@ -1,4 +1,4 @@
-import { del, get, login, post, prettyJSON } from '../libs/common';
+import { del, get, login, post, prettyJSON } from '../../libs/common';
 
 describe('셀럽 그라운드 - 메세지', () => {
   before(() => {

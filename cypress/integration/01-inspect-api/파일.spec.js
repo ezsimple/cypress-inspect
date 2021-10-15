@@ -1,4 +1,4 @@
-import { login, post, prettyJSON } from '../libs/common';
+import { login, post, prettyJSON } from '../../libs/common';
 
 describe('파일', () => {
   before(() => {
