@@ -6,7 +6,7 @@ describe('아트워크 상품 옵션(★)', () => {
   });
 
   it('사용자 선택 옵션', () => {
-    const artProducts = new Set([44, 50, 52]);
+    const artProducts = new Set([44, 50, 53]);
     for (const o of artProducts) {
       const url = '/api/v1/art-product/' + o + '/options';
       const req = {};
