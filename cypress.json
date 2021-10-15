@@ -1,5 +1,8 @@
 {
     "experimentalSessionSupport": true,
     "baseUrl": "https://localhost",
-    "env": {}
+    "env": {
+        "host-api": "https://localhost",
+        "host-bo": "https://localhost:8443"
+    }
 }

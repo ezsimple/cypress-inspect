@@ -1,8 +1,10 @@
 import { get, post, prettyJSON } from '../../libs/common';
 
 describe('기획전', () => {
+  const host = Cypress.env('host-api');
+
   it('휴면계정 해제', () => {
-    const url = '/api/v1/login/activate';
+    const url = host + '/api/v1/login/activate';
     const req = {
       id: 'test4@upleat.com',
       resultCode: '',
@@ -15,7 +17,7 @@ describe('기획전', () => {
   });
 
   it('Apple 로그인', () => {
-    const url = '/api/v1/login/apple';
+    const url = host + '/api/v1/login/apple';
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
@@ -24,7 +26,7 @@ describe('기획전', () => {
   });
 
   it('서비스 이용 제한 해제 - 첨부파일 업로드', () => {
-    const url = '/api/v1/login/black/fileUpload';
+    const url = host + '/api/v1/login/black/fileUpload';
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
@@ -33,7 +35,7 @@ describe('기획전', () => {
   });
 
   it('서비스 이용 제한 해제 신청', () => {
-    const url = '/api/v1/login/black/release';
+    const url = host + '/api/v1/login/black/release';
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
@@ -42,7 +44,7 @@ describe('기획전', () => {
   });
 
   it('이메일 로그인', () => {
-    const url = '/api/v1/login/email';
+    const url = host + '/api/v1/login/email';
     const req = {
       id: 'test5@upleat.com',
       password: 'qwer1234',
@@ -54,7 +56,7 @@ describe('기획전', () => {
   });
 
   it('Google 로그인', () => {
-    const url = '/api/v1/login/google';
+    const url = host + '/api/v1/login/google';
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
@@ -63,7 +65,7 @@ describe('기획전', () => {
   });
 
   it('SNS 로그인 정보 조회', () => {
-    const url = '/api/v1/login/info';
+    const url = host + '/api/v1/login/info';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -72,7 +74,7 @@ describe('기획전', () => {
   });
 
   it('Kakao 로그인', () => {
-    const url = '/api/v1/login/kakao';
+    const url = host + '/api/v1/login/kakao';
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
@@ -81,7 +83,7 @@ describe('기획전', () => {
   });
 
   it('Naver 로그인', () => {
-    const url = '/api/v1/login/naver';
+    const url = host + '/api/v1/login/naver';
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
@@ -90,7 +92,7 @@ describe('기획전', () => {
   });
 
   it('인증 토큰 갱신', () => {
-    const url = '/api/v1/login/refresh';
+    const url = host + '/api/v1/login/refresh';
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
@@ -99,7 +101,7 @@ describe('기획전', () => {
   });
 
   it('로그아웃', () => {
-    const url = '/api/v1/logout';
+    const url = host + '/api/v1/logout';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -108,7 +110,7 @@ describe('기획전', () => {
   });
 
   it('오라운더 리뷰리마인드', () => {
-    const url = '/api/v1/orounder/review-remind';
+    const url = host + '/api/v1/orounder/review-remind';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);

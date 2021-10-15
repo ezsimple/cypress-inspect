@@ -1,13 +1,14 @@
 import { get, login, prettyJSON } from '../../libs/common';
 
 describe('기획전', () => {
+  const host = Cypress.env('host-api');
   before(() => {
     login();
   });
 
   it('기획전상세(상품)', () => {
     const index = 38;
-    const url = '/api/v1/exhibition/artProduct/' + index;
+    const url = host + '/api/v1/exhibition/artProduct/' + index;
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -19,7 +20,7 @@ describe('기획전', () => {
 
   it('기획전상세(작품)', () => {
     const index = 38;
-    const url = '/api/v1/exhibition/artwork/' + index;
+    const url = host + '/api/v1/exhibition/artwork/' + index;
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -30,7 +31,7 @@ describe('기획전', () => {
   });
 
   it('기획전 목록', () => {
-    const url = '/api/v1/exhibition/list';
+    const url = host + '/api/v1/exhibition/list';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);

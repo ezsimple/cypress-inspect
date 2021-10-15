@@ -1,6 +1,7 @@
 import { get, login, prettyJSON } from '../../libs/common';
 
 describe('카테고리', () => {
+  const host = Cypress.env('host-api');
   before(() => {
     login();
   });
@@ -9,7 +10,7 @@ describe('카테고리', () => {
 
   it('카테고리 전체 목록 조회', () => {
     const q = 0;
-    const url = '/api/v1/display/category';
+    const url = host + '/api/v1/display/category';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -19,7 +20,7 @@ describe('카테고리', () => {
 
   it('카테고리 목록 조회', () => {
     const q = 0;
-    const url = '/api/v1/display/category/{categoryIndex}';
+    const url = host + '/api/v1/display/category/{categoryIndex}';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -29,7 +30,7 @@ describe('카테고리', () => {
 
   it('카테고리 필터(옵션) 목록', () => {
     const q = 0;
-    const url = '/api/v1/display/categoryFilter/{categoryIndex}';
+    const url = host + '/api/v1/display/categoryFilter/{categoryIndex}';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);

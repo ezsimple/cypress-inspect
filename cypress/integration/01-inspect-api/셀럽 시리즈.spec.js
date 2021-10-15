@@ -1,14 +1,17 @@
 import { del, get, login, post, prettyJSON, put } from '../../libs/common';
 
 describe('셀럽 시리즈', () => {
+  const host = Cypress.env('host-api');
+
   const artistMemberNo = 5;
   let seriesIndex = 1;
+
   before(() => {
     login();
   });
 
   it('아티스트별 시리즈 대상 아트워크 상품 목록(페이징)', () => {
-    const url = '/api/v1/celeb/' + artistMemberNo + '/series/artworks';
+    const url = host + '/api/v1/celeb/' + artistMemberNo + '/series/artworks';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -17,7 +20,7 @@ describe('셀럽 시리즈', () => {
   });
 
   it('아티스트별 시리즈 등록', () => {
-    const url = '/api/v1/celeb/series';
+    const url = host + '/api/v1/celeb/series';
     const req = {
       resultCode: '',
       resultMessage: '',
@@ -45,7 +48,7 @@ describe('셀럽 시리즈', () => {
   });
 
   it('아티스트별 기획전 수정', () => {
-    const url = '/api/v1/celeb/series/' + seriesIndex;
+    const url = host + '/api/v1/celeb/series/' + seriesIndex;
     const req = {
       resultCode: '',
       resultMessage: '',
@@ -73,7 +76,7 @@ describe('셀럽 시리즈', () => {
   });
 
   it('아티스트별 시리즈 삭제', () => {
-    const url = '/api/v1/celeb/series/' + seriesIndex;
+    const url = host + '/api/v1/celeb/series/' + seriesIndex;
     const req = null;
     del(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -83,7 +86,7 @@ describe('셀럽 시리즈', () => {
   });
 
   it('아티스트별 시리즈 목록(페이징)', () => {
-    const url = '/api/v1/celeb/' + artistMemberNo + '/registered/series';
+    const url = host + '/api/v1/celeb/' + artistMemberNo + '/registered/series';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);

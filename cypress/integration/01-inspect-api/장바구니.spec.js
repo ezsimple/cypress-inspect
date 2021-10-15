@@ -1,6 +1,7 @@
 import { get, login, prettyJSON } from '../../libs/common';
 
 describe('장바구니', () => {
+  const host = Cypress.env('host-api');
   before(() => {
     const req = { id: 'test@upleat.com', password: 'qwer1234' };
     login(null, req);
@@ -10,7 +11,7 @@ describe('장바구니', () => {
 
   it('장바구니 목록', () => {
     const q = 0;
-    const url = '/api/v1/orderCart';
+    const url = host + '/api/v1/orderCart';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -20,7 +21,7 @@ describe('장바구니', () => {
 
   // it('장바구니 저장', () => {
   //   const q = 0;
-  //   const url = '/api/v1/orderCart';
+  //   const url = host + '/api/v1/orderCart';
   //   const req = {
   //     insertCartList: [
   //       {
@@ -43,7 +44,7 @@ describe('장바구니', () => {
 
   // it('장바구니 수정', () => {
   //   const q = 0;
-  //   const url = '/api/v1/orderCart';
+  //   const url = host + '/api/v1/orderCart';
   //   const req = {};
   //   put(url, req).should((response) => {
   //     expect(response.status).to.eq(200);
@@ -53,7 +54,7 @@ describe('장바구니', () => {
 
   it('장바구니 수정화면 상품 옵션 목록', () => {
     const cartIndex = 14;
-    const url = '/api/v1/orderCart/options/' + cartIndex;
+    const url = host + '/api/v1/orderCart/options/' + cartIndex;
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);

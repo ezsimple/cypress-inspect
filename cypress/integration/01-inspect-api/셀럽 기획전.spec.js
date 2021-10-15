@@ -1,6 +1,8 @@
 import { del, get, login, post, prettyJSON, put } from '../../libs/common';
 
 describe('셀럽 기획전', () => {
+  const host = Cypress.env('host-api');
+
   const artistMemberNo = 5;
   let exhibitionIndex = 1;
 
@@ -9,7 +11,7 @@ describe('셀럽 기획전', () => {
   });
 
   it('아티스트별 기획전 대상 아트워크 상품 목록(페이징)', () => {
-    const url = '/api/v1/celeb/' + artistMemberNo + '/exhibition/art-products';
+    const url = host + '/api/v1/celeb/' + artistMemberNo + '/exhibition/art-products';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -18,7 +20,7 @@ describe('셀럽 기획전', () => {
   });
 
   it('아티스트별 기획전 등록', () => {
-    const url = '/api/v1/celeb/exhibition';
+    const url = host + '/api/v1/celeb/exhibition';
     const req = {
       resultCode: '',
       resultMessage: '',
@@ -37,7 +39,7 @@ describe('셀럽 기획전', () => {
   });
 
   it('아티스트별 기획전 수정', () => {
-    const url = '/api/v1/celeb/exhibition/' + exhibitionIndex;
+    const url = host + '/api/v1/celeb/exhibition/' + exhibitionIndex;
     const req = {
       resultCode: '',
       resultMessage: '',
@@ -56,7 +58,7 @@ describe('셀럽 기획전', () => {
   });
 
   it('아티스트별 기획전 삭제', () => {
-    const url = '/api/v1/celeb/exhibition/' + exhibitionIndex;
+    const url = host + '/api/v1/celeb/exhibition/' + exhibitionIndex;
     const req = null;
     del(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -66,7 +68,7 @@ describe('셀럽 기획전', () => {
   });
 
   it('아티스트별 기획전 목록(페이징)', () => {
-    const url = '/api/v1/celeb/' + artistMemberNo + '/registered/exhibitions';
+    const url = host + '/api/v1/celeb/' + artistMemberNo + '/registered/exhibitions';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);

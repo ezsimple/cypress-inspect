@@ -1,6 +1,7 @@
 import { get, login, prettyJSON } from '../../libs/common';
 
 describe('FAQ', () => {
+  const host = Cypress.env('host-api');
   before(() => {
     login();
   });
@@ -9,7 +10,7 @@ describe('FAQ', () => {
 
   it('셀럽 FAQ 페이징', () => {
     const q = 0;
-    const url = '/api/v1/celeb/faq';
+    const url = host + '/api/v1/celeb/faq';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -19,7 +20,7 @@ describe('FAQ', () => {
 
   it('쇼핑몰 FAQ 페이징', () => {
     const q = 0;
-    const url = '/api/v1/mall/faq';
+    const url = host + '/api/v1/mall/faq';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -29,7 +30,7 @@ describe('FAQ', () => {
 
   it('유형 카테고리 코드 리스트', () => {
     const q = 0;
-    const url = '/api/v1/type-category/{typeCategoryCode}/code';
+    const url = host + '/api/v1/type-category/{typeCategoryCode}/code';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
