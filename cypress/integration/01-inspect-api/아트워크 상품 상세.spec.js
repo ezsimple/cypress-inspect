@@ -66,15 +66,15 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('아트워크 상품 좋아요 카운터', () => {
-    const q = '44';
-    const url = host + '/api/v1/art-product/' + q + '/like/count';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
+  // it('아트워크 상품 좋아요 카운터', () => {
+  //   const q = '44';
+  //   const url = host + '/api/v1/art-product/' + q + '/like/count';
+  //   const req = {};
+  //   get(url, req).should((response) => {
+  //     expect(response.status).to.eq(200);
+  //     console.log(prettyJSON(response));
+  //   });
+  // });
 
   it('상품기본정보(상품고시)', () => {
     const q = '44';
@@ -157,7 +157,7 @@ describe('아트워크 상품 상세', () => {
   });
 
   it('아트워크 상품 요약', () => {
-    const q = '44';
+    const q = '55';
     const url = host + '/api/v1/art-product/' + q + '/summary';
     const req = {};
     get(url, req).should((response) => {

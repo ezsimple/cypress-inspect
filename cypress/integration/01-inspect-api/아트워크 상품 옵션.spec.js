@@ -6,7 +6,23 @@ describe('아트워크 상품 옵션(★)', () => {
     login();
   });
 
-  it('사용자 선택 옵션', () => {
+  it('사용자 선택 옵션(BO)', () => {
+    const host = Cypress.env('host-bo');
+    const url = host + '/bo/product/getOptionItemListByProductItem';
+    const req = {
+      productUpperCode: '105',
+      productMiddleCode: '001',
+      productCode: '1050010001', // artProductIndex : 55에 해당하는 productCode 입니다.
+      useYn: 'Y',
+      languageId: 'KO',
+    };
+    get(url, req).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(prettyJSON(response));
+    });
+  });
+
+  it('사용자 선택 옵션(API)', () => {
     const artProducts = new Set([55]);
     for (const o of artProducts) {
       const host = Cypress.env('host-api');
