@@ -57,7 +57,7 @@ describe('아트워크 상품 상세', () => {
   });
 
   it('아트워크 상품 정보', () => {
-    const q = '44';
+    const q = '55';
     const url = host + '/api/v1/art-product/' + q + '/info';
     const req = {};
     get(url, req).should((response) => {
