@@ -6,7 +6,7 @@ describe('아트워크 상품 옵션(★)', () => {
     login();
   });
 
-  it('사용자 선택 옵션(BO)', () => {
+  it('/bo/product/getOptionItemListByProductItem (BO)', () => {
     const host = Cypress.env('host-bo');
     const url = host + '/bo/product/getOptionItemListByProductItem';
     const req = {
@@ -22,7 +22,7 @@ describe('아트워크 상품 옵션(★)', () => {
     });
   });
 
-  it('사용자 선택 옵션(API)', () => {
+  it('/options (API)', () => {
     const artProducts = new Set([55]);
     for (const o of artProducts) {
       const host = Cypress.env('host-api');

@@ -6,7 +6,7 @@ describe('아트워크 상품 상세', () => {
     login();
   });
 
-  it('아티스트 Summary', () => {
+  it('/artist/summary', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/artist/summary';
     const req = {};
@@ -16,9 +16,9 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('아트워크 이미지와 아트워크명 페이징', () => {
+  it('/artist/series', () => {
     const q = '44';
-    const url = host + '/api/v1/art-product/44/artworks';
+    const url = host + '/api/v1/art-product/44/artist/series';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -26,7 +26,7 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('아트워크 상품 베스트 리뷰', () => {
+  it('/best/reviews', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/best/reviews';
     const req = {};
@@ -36,7 +36,7 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('상품 배송 정보', () => {
+  it('/delivery/info', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/delivery/info';
     const req = {};
@@ -46,7 +46,7 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('아트워크 상품 편집 이미지 목록', () => {
+  it('/edit/images', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/edit/images';
     const req = {};
@@ -56,9 +56,9 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('아트워크 상품 정보', () => {
+  it('/images', () => {
     const q = '55';
-    const url = host + '/api/v1/art-product/' + q + '/info';
+    const url = host + '/api/v1/art-product/' + q + '/images';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
@@ -76,7 +76,7 @@ describe('아트워크 상품 상세', () => {
   //   });
   // });
 
-  it('상품기본정보(상품고시)', () => {
+  it('/notify', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/notify';
     const req = {};
@@ -86,7 +86,7 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('사용자 선택 옵션', () => {
+  it('/options', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/options';
     const req = {};
@@ -96,7 +96,7 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('상품 인쇄 안내', () => {
+  it('/print/guide', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/print/guide';
     const req = {};
@@ -106,17 +106,17 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('아트워크 상품 리뷰 카운터', () => {
-    const q = '44';
-    const url = host + '/api/v1/art-product/' + q + '/review/count';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
+  // it('/review/count', () => {
+  //   const q = '44';
+  //   const url = host + '/api/v1/art-product/' + q + '/review/count';
+  //   const req = {};
+  //   get(url, req).should((response) => {
+  //     expect(response.status).to.eq(200);
+  //     console.log(prettyJSON(response));
+  //   });
+  // });
 
-  it('상품 SEO', () => {
+  it('/seo', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/seo';
     const req = {};
@@ -126,7 +126,7 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('아트워크 상품 시리즈', () => {
+  it('/series', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/series';
     const req = {};
@@ -136,7 +136,7 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('상품 배송/교환/반품 안내', () => {
+  it('/shipping/guide', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/shipping/guide';
     const req = {};
@@ -146,7 +146,7 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('상품 사이즈 안내', () => {
+  it('/size/guide', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/size/guide';
     const req = {};
@@ -156,7 +156,7 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('아트워크 상품 요약', () => {
+  it('/summary', () => {
     const q = '55';
     const url = host + '/api/v1/art-product/' + q + '/summary';
     const req = {};
@@ -166,17 +166,7 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('아트워크 상품 요약', () => {
-    const q = '44';
-    const url = host + '/api/v1/art-product/' + q + '/summary';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-    });
-  });
-
-  it('상품 세탁 및 관리', () => {
+  it('/wash/info', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/wash/info';
     const req = {};
@@ -186,9 +176,9 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  it('아트워크 정보', () => {
+  it('/artwork/summary', () => {
     const q = '44';
-    const url = host + '/api/v1/art-product/' + q + '/artwork/info';
+    const url = host + '/api/v1/art-product/' + q + '/artwork/summary';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
