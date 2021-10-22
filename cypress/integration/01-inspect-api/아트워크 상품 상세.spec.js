@@ -18,7 +18,7 @@ describe('아트워크 상품 상세', () => {
 
   it('/artist/series', () => {
     const q = '44';
-    const url = host + '/api/v1/art-product/44/artist/series';
+    const url = host + '/api/v1/art-product/' + q + '/artist/series';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
