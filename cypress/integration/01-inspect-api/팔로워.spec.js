@@ -1,4 +1,4 @@
-import { get, login, post, prettyJSON } from '../../libs/common';
+import { get, login, post, report } from '../../libs/common';
 
 describe('팔로워', () => {
   const host = Cypress.env('host-api');
@@ -14,7 +14,7 @@ describe('팔로워', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -24,7 +24,7 @@ describe('팔로워', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 });

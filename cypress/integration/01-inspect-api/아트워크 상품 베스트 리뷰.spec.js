@@ -1,4 +1,4 @@
-import { get, login, prettyJSON } from '../../libs/common';
+import { get, login, report } from '../../libs/common';
 
 describe('아트워크 상품 베스트 리뷰', () => {
   const host = Cypress.env('host-api');
@@ -12,7 +12,7 @@ describe('아트워크 상품 베스트 리뷰', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log('/best/reviews\n', prettyJSON(response));
+      report(url, response);
     });
   });
 });

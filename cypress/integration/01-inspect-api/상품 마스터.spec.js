@@ -1,4 +1,4 @@
-import { get, login, prettyJSON } from '../../libs/common';
+import { get, login, report } from '../../libs/common';
 
 describe('상품 마스터', () => {
   const host = Cypress.env('host-api');
@@ -11,7 +11,7 @@ describe('상품 마스터', () => {
     const url = host + '/api/v1/product/master/' + productCode + '/info';
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 });

@@ -1,4 +1,4 @@
-import { del, get, login, post, prettyJSON, put } from '../../libs/common';
+import { del, get, login, post, put, report } from '../../libs/common';
 
 describe('셀럽 시리즈', () => {
   const host = Cypress.env('host-api');
@@ -15,7 +15,7 @@ describe('셀럽 시리즈', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -42,8 +42,8 @@ describe('셀럽 시리즈', () => {
 
     post(url, req).should((response) => {
       expect(response.status).to.eq(201); // 등록은 201로 검사
-      console.log(prettyJSON(response));
-      seriesIndex = response.body.seriesIndex;
+      const { seriesIndex } = response.body;
+      report(url, response);
     });
   });
 
@@ -70,8 +70,8 @@ describe('셀럽 시리즈', () => {
 
     put(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-      seriesIndex = response.body.seriesIndex;
+      const { seriesIndex } = response.body;
+      report(url, response);
     });
   });
 
@@ -80,8 +80,8 @@ describe('셀럽 시리즈', () => {
     const req = null;
     del(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
       // response.body.seriesIndex 없음
+      report(url, response);
     });
   });
 
@@ -90,7 +90,7 @@ describe('셀럽 시리즈', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -100,7 +100,7 @@ describe('셀럽 시리즈', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 });

@@ -1,4 +1,4 @@
-import { get, login, prettyJSON } from '../../libs/common';
+import { get, login, report } from '../../libs/common';
 
 describe('약관', () => {
   const host = Cypress.env('host-api');
@@ -14,7 +14,7 @@ describe('약관', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -24,7 +24,7 @@ describe('약관', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -34,7 +34,7 @@ describe('약관', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -44,7 +44,7 @@ describe('약관', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 });

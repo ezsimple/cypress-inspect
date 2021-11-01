@@ -1,4 +1,4 @@
-import { del, get, login, post, prettyJSON } from '../../libs/common';
+import { del, get, login, post, report } from '../../libs/common';
 
 describe('좋아요', () => {
   const host = Cypress.env('host-api');
@@ -14,7 +14,7 @@ describe('좋아요', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -24,7 +24,7 @@ describe('좋아요', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -34,7 +34,7 @@ describe('좋아요', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -44,7 +44,7 @@ describe('좋아요', () => {
     const req = {};
     del(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -54,7 +54,7 @@ describe('좋아요', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -64,7 +64,7 @@ describe('좋아요', () => {
     const req = {};
     del(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -74,7 +74,7 @@ describe('좋아요', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -84,7 +84,7 @@ describe('좋아요', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 });

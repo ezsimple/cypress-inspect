@@ -1,4 +1,4 @@
-import { get, login, prettyJSON } from '../../libs/common';
+import { get, login, report } from '../../libs/common';
 
 describe('기획전', () => {
   const host = Cypress.env('host-api');
@@ -12,9 +12,9 @@ describe('기획전', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
       const { exhibitionIndex } = response.body.detailItem;
       expect(exhibitionIndex).to.eq(index);
+      report(url, response);
     });
   });
 
@@ -24,9 +24,9 @@ describe('기획전', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
       const { exhibitionIndex } = response.body.detailItem;
       expect(exhibitionIndex).to.eq(index);
+      report(url, response);
     });
   });
 
@@ -35,7 +35,7 @@ describe('기획전', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 });

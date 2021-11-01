@@ -1,4 +1,4 @@
-import { del, get, login, post, prettyJSON, put } from '../../libs/common';
+import { del, get, login, post, put, report } from '../../libs/common';
 
 describe('셀럽 기획전', () => {
   const host = Cypress.env('host-api');
@@ -11,11 +11,12 @@ describe('셀럽 기획전', () => {
   });
 
   it('아티스트별 기획전 대상 아트워크 상품 목록(페이징)', () => {
-    const url = host + '/api/v1/celeb/' + artistMemberNo + '/exhibition/art-products';
+    const url =
+      host + '/api/v1/celeb/' + artistMemberNo + '/exhibition/art-products';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -33,8 +34,8 @@ describe('셀럽 기획전', () => {
 
     post(url, req).should((response) => {
       expect(response.status).to.eq(201); // 등록은 201로 검사
-      console.log(prettyJSON(response));
-      exhibitionIndex = response.body.exhibitionIndex;
+      const { exhibitionIndex } = response.body;
+      report(url, response);
     });
   });
 
@@ -52,8 +53,8 @@ describe('셀럽 기획전', () => {
 
     put(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
-      exhibitionIndex = response.body.exhibitionIndex;
+      const { exhibitionIndex } = response.body;
+      report(url, response);
     });
   });
 
@@ -62,17 +63,18 @@ describe('셀럽 기획전', () => {
     const req = null;
     del(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
       // response.body.exhibitionIndex 없음
+      report(url, response);
     });
   });
 
   it('아티스트별 기획전 목록(페이징)', () => {
-    const url = host + '/api/v1/celeb/' + artistMemberNo + '/registered/exhibitions';
+    const url =
+      host + '/api/v1/celeb/' + artistMemberNo + '/registered/exhibitions';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -85,7 +87,7 @@ describe('셀럽 기획전', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 });

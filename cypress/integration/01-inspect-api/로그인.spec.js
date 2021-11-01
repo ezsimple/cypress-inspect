@@ -1,4 +1,4 @@
-import { get, post, prettyJSON } from '../../libs/common';
+import { get, post, report } from '../../libs/common';
 
 describe('기획전', () => {
   const host = Cypress.env('host-api');
@@ -12,7 +12,7 @@ describe('기획전', () => {
     };
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -21,7 +21,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -30,7 +30,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -39,7 +39,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -51,7 +51,7 @@ describe('기획전', () => {
     };
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -60,7 +60,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -69,7 +69,7 @@ describe('기획전', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -78,7 +78,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -87,7 +87,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -96,7 +96,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -105,7 +105,7 @@ describe('기획전', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -114,7 +114,7 @@ describe('기획전', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 });

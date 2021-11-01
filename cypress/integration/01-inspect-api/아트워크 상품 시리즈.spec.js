@@ -1,4 +1,4 @@
-import { get, login, prettyJSON } from '../../libs/common';
+import { get, login, report } from '../../libs/common';
 
 describe('아트워크 상품 시리즈', () => {
   const host = Cypress.env('host-api');
@@ -13,7 +13,7 @@ describe('아트워크 상품 시리즈', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log('/series\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -24,7 +24,7 @@ describe('아트워크 상품 시리즈', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log('/artist/series\n', prettyJSON(response));
+      report(url, response);
     });
   });
 });

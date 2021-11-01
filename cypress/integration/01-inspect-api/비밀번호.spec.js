@@ -1,4 +1,4 @@
-import { login, post, prettyJSON } from '../../libs/common';
+import { login, post, report } from '../../libs/common';
 
 describe('비밀번호', () => {
   const host = Cypress.env('host-api');
@@ -14,7 +14,7 @@ describe('비밀번호', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -24,7 +24,7 @@ describe('비밀번호', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      console.log(prettyJSON(response));
+      report(url, response);
     });
   });
 });
