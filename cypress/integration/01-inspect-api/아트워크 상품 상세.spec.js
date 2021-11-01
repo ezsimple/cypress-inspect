@@ -66,16 +66,6 @@ describe('아트워크 상품 상세', () => {
     });
   });
 
-  // it('/like/count', () => {
-  //   const q = '44';
-  //   const url = host + '/api/v1/art-product/' + q + '/like/count';
-  //   const req = {};
-  //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
-  //     console.log('/like/count\n', prettyJSON(response));
-  //   });
-  // });
-
   it('/notify', () => {
     const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/notify';
@@ -105,16 +95,6 @@ describe('아트워크 상품 상세', () => {
       console.log('/print/guide\n', prettyJSON(response));
     });
   });
-
-  // it('/review/count', () => {
-  //   const q = '44';
-  //   const url = host + '/api/v1/art-product/' + q + '/review/count';
-  //   const req = {};
-  //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
-  //     console.log('/review/count\n', prettyJSON(response));
-  //   });
-  // });
 
   it('/seo', () => {
     const q = '44';

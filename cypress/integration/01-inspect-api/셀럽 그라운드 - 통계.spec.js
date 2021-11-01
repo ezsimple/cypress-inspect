@@ -1,4 +1,11 @@
-import { get, login, post, prettyJSON } from '../../libs/common';
+import {
+  get,
+  post,
+  put,
+  login,
+  prettyJSON,
+  getRunningTime,
+} from '../../libs/common';
 
 describe('셀럽 그라운드 - 통계', () => {
   const host = Cypress.env('host-api');
@@ -6,25 +13,114 @@ describe('셀럽 그라운드 - 통계', () => {
     login();
   });
 
-  // 셀럽 본인 인증
-
-  it('일간 통계', () => {
+  it('판매 트랜드', () => {
     const q = 0;
-    const url = host + '/api/v1/celeb/stat/day/-7';
+    const url = host + '/api/v1/celeb/stat/sell_trend/2021-07-07/2021-07-18';
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log('/api/v1/celeb/stat/day/-7', prettyJSON(response));
+      console.log(
+        getRunningTime(),
+        '/api/v1/celeb/stat/sell_trend/2021-07-07/2021-07-18\n',
+        prettyJSON(response)
+      );
     });
   });
 
-  // it('월간 통계', () => {
-  //   const q = 0;
-  //   const url = host + '/api/v1/celeb/stat/month/-1';
-  //   const req = {};
-  //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
-  //     console.log('/api/v1/celeb/stat/month/-1', prettyJSON(response));
-  //   });
-  // });
+  it('방문 트랜드(기간중 집계)', () => {
+    const q = 0;
+    const url =
+      host + '/api/v1/celeb/stat/visit_trend/summary/2021-10-01/2021-10-31';
+    const req = {};
+    get(url, req).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(
+        getRunningTime(),
+        '/api/v1/celeb/stat/visit_trend/summary/2021-10-01/2021-10-31\n',
+        prettyJSON(response)
+      );
+    });
+  });
+
+  it('방문 트랜드(기간중 일자별)', () => {
+    const q = 0;
+    const url = host + '/api/v1/celeb/stat/visit_trend/2021-10-01/2021-10-31';
+    const req = {};
+    get(url, req).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(
+        getRunningTime(),
+        '/api/v1/celeb/stat/visit_trend/summary/2021-10-01/2021-10-31\n',
+        prettyJSON(response)
+      );
+    });
+  });
+
+  it('좋아요 트랜드', () => {
+    const q = 0;
+    const url = host + '/api/v1/celeb/stat/like_trend/2021-10-20/2021-10-27';
+    const req = {};
+    get(url, req).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(
+        getRunningTime(),
+        '/api/v1/celeb/stat/like_trend/2021-10-20/2021-10-27\n',
+        prettyJSON(response)
+      );
+    });
+  });
+
+  it('리뷰 트랜드', () => {
+    const q = 0;
+    const url = host + '/api/v1/celeb/stat/review_trend/2021-10-21/2021-10-28';
+    const req = {};
+    get(url, req).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(
+        getRunningTime(),
+        '/api/v1/celeb/stat/review_trend/2021-10-21/2021-10-28\n',
+        prettyJSON(response)
+      );
+    });
+  });
+
+  it('리뷰', () => {
+    const q = 0;
+    const url = host + '/api/v1/celeb/stat/reviews/2021-10-21/2021-10-28';
+    const req = {};
+    get(url, req).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(
+        getRunningTime(),
+        '/api/v1/celeb/stat/reviews/2021-10-21/2021-10-28\n',
+        prettyJSON(response)
+      );
+    });
+  });
+
+  it('구글 애널리틱스(등록)', () => {
+    const url = host + '/api/v1/celeb/stat/goole_analytics';
+    const req = { gaId: 'GAKey1' };
+    post(url, req).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(
+        getRunningTime(),
+        '/v1/celeb/stat/goole_analytics\n',
+        prettyJSON(response)
+      );
+    });
+  });
+
+  it('구글 애널리틱스(수정)', () => {
+    const url = host + '/api/v1/celeb/stat/goole_analytics';
+    const req = { gaId: 'GAKey2' };
+    put(url, req).should((response) => {
+      expect(response.status).to.eq(200);
+      console.log(
+        getRunningTime(),
+        '/v1/celeb/stat/goole_analytics\n',
+        prettyJSON(response)
+      );
+    });
+  });
 });

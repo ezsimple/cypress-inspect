@@ -8,6 +8,7 @@ export function login(url, req) {
   // 토큰이 invalid할 경우 처리가 안됩니다.
   // const token = JSON.stringify(window.sessionStorage.getItem('x-oround-token'));
   // if (token) return;
+  const startTime = performance.now();
   cy.request({
     method: 'POST',
     url: url ? url : '/api/v1/login/email',
@@ -16,6 +17,8 @@ export function login(url, req) {
     const { accessToken } = body.token;
     window.sessionStorage.setItem('x-oround-token', accessToken); // 동기화 시킬수 없음
     Cypress.env('token', accessToken);
+    const endTime = performance.now();
+    Cypress.env('runningTime', endTime - startTime);
   });
   cy.waitUntil(() =>
     cy
@@ -31,8 +34,15 @@ export function getToken() {
   // JSON.stringify(window.sessionStorage.getItem('x-oround-token')); // 동기화 시킬수 없음
 }
 
+// 실행 시간 측정
+export function getRunningTime() {
+  const ms = Cypress.env('runningTime').toFixed(3) + ' ms';
+  return ms;
+}
+
 export function get(url, req) {
-  return cy.request({
+  const startTime = performance.now();
+  const resp = cy.request({
     method: 'GET',
     url: url,
     headers: {
@@ -40,10 +50,14 @@ export function get(url, req) {
     },
     body: req,
   });
+  const endTime = performance.now();
+  Cypress.env('runningTime', endTime - startTime);
+  return resp;
 }
 
 export function post(url, req) {
-  return cy.request({
+  const startTime = performance.now();
+  const resp = cy.request({
     method: 'POST',
     url: url,
     headers: {
@@ -51,10 +65,14 @@ export function post(url, req) {
     },
     body: req,
   });
+  const endTime = performance.now();
+  Cypress.env('runningTime', endTime - startTime);
+  return resp;
 }
 
 export function put(url, req) {
-  return cy.request({
+  const startTime = performance.now();
+  const resp = cy.request({
     method: 'PUT',
     url: url,
     headers: {
@@ -62,10 +80,14 @@ export function put(url, req) {
     },
     body: req,
   });
+  const endTime = performance.now();
+  Cypress.env('runningTime', endTime - startTime);
+  return resp;
 }
 
 export function del(url, req) {
-  return cy.request({
+  const startTime = performance.now();
+  const resp = cy.request({
     method: 'DELETE',
     url: url,
     headers: {
@@ -73,4 +95,7 @@ export function del(url, req) {
     },
     body: req,
   });
+  const endTime = performance.now();
+  Cypress.env('runningTime', endTime - startTime);
+  return resp;
 }
