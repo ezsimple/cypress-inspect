@@ -6,7 +6,7 @@ describe('셀럽 그라운드 - 통계', () => {
     login();
   });
 
-  it('판매 트랜드', () => {
+  it('판매 트랜드(기간중 종합)', () => {
     const q = 0;
     const url = host + '/api/v1/celeb/stat/sell_trend/2021-07-07/2021-07-18';
     const req = {};
@@ -37,7 +37,7 @@ describe('셀럽 그라운드 - 통계', () => {
     });
   });
 
-  it('좋아요 트랜드', () => {
+  it('좋아요 트랜드(기간중 좋아요)', () => {
     const q = 0;
     const url = host + '/api/v1/celeb/stat/like_trend/2021-10-20/2021-10-27';
     const req = {};
@@ -47,7 +47,7 @@ describe('셀럽 그라운드 - 통계', () => {
     });
   });
 
-  it('리뷰 트랜드', () => {
+  it('리뷰 트랜드(기간중 좋아요)', () => {
     const q = 0;
     const url = host + '/api/v1/celeb/stat/review_trend/2021-10-21/2021-10-28';
     const req = {};
@@ -57,7 +57,7 @@ describe('셀럽 그라운드 - 통계', () => {
     });
   });
 
-  it('리뷰', () => {
+  it('리뷰(기간중 리뷰)', () => {
     const q = 0;
     const url = host + '/api/v1/celeb/stat/reviews/2021-10-21/2021-10-28';
     const req = {};
