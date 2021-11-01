@@ -1,12 +1,4 @@
-import {
-  get,
-  post,
-  put,
-  login,
-  prettyJSON,
-  report,
-  getRunningTime,
-} from '../../libs/common';
+import { get, login, post, put, report } from '../../libs/common';
 
 describe('셀럽 그라운드 - 통계', () => {
   const host = Cypress.env('host-api');
@@ -76,7 +68,6 @@ describe('셀럽 그라운드 - 통계', () => {
   });
 
   it('구글 애널리틱스(등록)', () => {
-    const url = host + '/api/v1/celeb/stat/goole_analytics';
     const req = { gaId: 'GAKey1' };
     post(url, req).should((response) => {
       expect(response.status).to.eq(200);
