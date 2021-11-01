@@ -4,6 +4,7 @@ import {
   put,
   login,
   prettyJSON,
+  report,
   getRunningTime,
 } from '../../libs/common';
 
@@ -19,11 +20,7 @@ describe('셀럽 그라운드 - 통계', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(
-        getRunningTime(),
-        '/api/v1/celeb/stat/sell_trend/2021-07-07/2021-07-18\n',
-        prettyJSON(response)
-      );
+      report(url, response);
     });
   });
 
@@ -34,11 +31,7 @@ describe('셀럽 그라운드 - 통계', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(
-        getRunningTime(),
-        '/api/v1/celeb/stat/visit_trend/summary/2021-10-01/2021-10-31\n',
-        prettyJSON(response)
-      );
+      report(url, response);
     });
   });
 
@@ -48,11 +41,7 @@ describe('셀럽 그라운드 - 통계', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(
-        getRunningTime(),
-        '/api/v1/celeb/stat/visit_trend/summary/2021-10-01/2021-10-31\n',
-        prettyJSON(response)
-      );
+      report(url, response);
     });
   });
 
@@ -62,11 +51,7 @@ describe('셀럽 그라운드 - 통계', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(
-        getRunningTime(),
-        '/api/v1/celeb/stat/like_trend/2021-10-20/2021-10-27\n',
-        prettyJSON(response)
-      );
+      report(url, response);
     });
   });
 
@@ -76,11 +61,7 @@ describe('셀럽 그라운드 - 통계', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(
-        getRunningTime(),
-        '/api/v1/celeb/stat/review_trend/2021-10-21/2021-10-28\n',
-        prettyJSON(response)
-      );
+      report(url, response);
     });
   });
 
@@ -90,11 +71,7 @@ describe('셀럽 그라운드 - 통계', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(
-        getRunningTime(),
-        '/api/v1/celeb/stat/reviews/2021-10-21/2021-10-28\n',
-        prettyJSON(response)
-      );
+      report(url, response);
     });
   });
 
@@ -103,11 +80,7 @@ describe('셀럽 그라운드 - 통계', () => {
     const req = { gaId: 'GAKey1' };
     post(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(
-        getRunningTime(),
-        '/v1/celeb/stat/goole_analytics\n',
-        prettyJSON(response)
-      );
+      report(url, response);
     });
   });
 
@@ -116,11 +89,7 @@ describe('셀럽 그라운드 - 통계', () => {
     const req = { gaId: 'GAKey2' };
     put(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(
-        getRunningTime(),
-        '/v1/celeb/stat/goole_analytics\n',
-        prettyJSON(response)
-      );
+      report(url, response);
     });
   });
 });

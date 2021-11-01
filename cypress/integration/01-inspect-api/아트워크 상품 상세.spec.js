@@ -1,4 +1,4 @@
-import { get, login, prettyJSON, getRunningTime } from '../../libs/common';
+import { get, login, report } from '../../libs/common';
 
 describe('아트워크 상품 상세', () => {
   const host = Cypress.env('host-api');
@@ -12,7 +12,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/artist/summary\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -22,7 +22,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/artist/series\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -32,7 +32,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/best/reviews\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -42,7 +42,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/delivery/info\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -52,7 +52,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/edit/images\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -62,7 +62,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/images\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -72,7 +72,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/notify\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -82,7 +82,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/options\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -92,7 +92,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/print/guide\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -102,7 +102,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/seo\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -112,7 +112,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/series\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -122,7 +122,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/shipping/guide\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -132,7 +132,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/size/guide\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -142,7 +142,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/summary\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -152,7 +152,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/wash/info\n', prettyJSON(response));
+      report(url, response);
     });
   });
 
@@ -162,7 +162,7 @@ describe('아트워크 상품 상세', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      console.log(getRunningTime(), '/artwork/summary\n', prettyJSON(response));
+      report(url, response);
     });
   });
 });

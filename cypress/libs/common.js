@@ -4,6 +4,12 @@ export function prettyJSON(response) {
   return JSON.stringify(response.body, null, 2);
 }
 
+export function report(url, response) {
+  const host = Cypress.env('host-api');
+  const uri = url.replace(host, '');
+  console.log(getRunningTime(), uri + '\n', prettyJSON(response));
+}
+
 export function login(url, req) {
   // 토큰이 invalid할 경우 처리가 안됩니다.
   // const token = JSON.stringify(window.sessionStorage.getItem('x-oround-token'));
