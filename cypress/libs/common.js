@@ -7,7 +7,7 @@ export function prettyJSON(response) {
 export function report(url, response) {
   const host = Cypress.env('host-api');
   const uri = url.replace(host, '');
-  console.log(getRunningTime(), uri + '\n', prettyJSON(response));
+  console.log(uri, '(' + getRunningTime() + ')' + '\n', prettyJSON(response));
 }
 
 export function login(url, req) {

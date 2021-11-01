@@ -1,4 +1,4 @@
-import { get, login } from '../../libs/common';
+import { get, login, report } from '../../libs/common';
 
 describe('아트워크 상품 요약', () => {
   const host = Cypress.env('host-api');

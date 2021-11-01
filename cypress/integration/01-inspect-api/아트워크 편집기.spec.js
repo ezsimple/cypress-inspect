@@ -1,4 +1,4 @@
-import { get, login, post } from '../../libs/common';
+import { get, login, post, report } from '../../libs/common';
 
 describe('아트워크 편집기', () => {
   const host = Cypress.env('host-api');
