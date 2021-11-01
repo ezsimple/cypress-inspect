@@ -7,25 +7,34 @@ export function prettyJSON(response) {
 export function report(url, response) {
   const host = Cypress.env('host-api');
   const uri = url.replace(host, '');
-  console.log(uri, '(' + getRunningTime() + ')' + '\n', prettyJSON(response));
+  console.log(
+    uri,
+    '(' + getRunningTime() + ')' + '\n',
+    response != null ? prettyJSON(response) : ''
+  );
 }
 
 export function login(url, req) {
   // 토큰이 invalid할 경우 처리가 안됩니다.
   // const token = JSON.stringify(window.sessionStorage.getItem('x-oround-token'));
   // if (token) return;
+  const _url = url ? url : '/api/v1/login/email';
   const startTime = performance.now();
   cy.request({
     method: 'POST',
-    url: url ? url : '/api/v1/login/email',
+    url: _url,
     body: req ? req : { id: 'test5@upleat.com', password: 'qwer1234' },
-  }).then(({ body }) => {
-    const { accessToken } = body.token;
-    window.sessionStorage.setItem('x-oround-token', accessToken); // 동기화 시킬수 없음
-    Cypress.env('token', accessToken);
-    const endTime = performance.now();
-    Cypress.env('runningTime', endTime - startTime);
-  });
+  })
+    .then(({ body }) => {
+      const { accessToken } = body.token;
+      window.sessionStorage.setItem('x-oround-token', accessToken); // 동기화 시킬수 없음
+      Cypress.env('token', accessToken);
+      const endTime = performance.now();
+      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+    })
+    .should((response) => {
+      report(_url, null);
+    });
   cy.waitUntil(() =>
     cy
       .window()
