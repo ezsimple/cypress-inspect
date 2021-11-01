@@ -36,66 +36,73 @@ export function getToken() {
 
 // 실행 시간 측정
 export function getRunningTime() {
-  const ms = Cypress.env('runningTime').toFixed(3) + ' ms';
-  return ms;
+  return Cypress.env('runningTime') + ' ms';
 }
 
 export function get(url, req) {
   const startTime = performance.now();
-  const resp = cy.request({
-    method: 'GET',
-    url: url,
-    headers: {
-      'x-oround-token': getToken(),
-    },
-    body: req,
-  });
-  const endTime = performance.now();
-  Cypress.env('runningTime', endTime - startTime);
-  return resp;
+  return cy
+    .request({
+      method: 'GET',
+      url: url,
+      headers: {
+        'x-oround-token': getToken(),
+      },
+      body: req,
+    })
+    .then(({ body }) => {
+      const endTime = performance.now();
+      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+    });
 }
 
 export function post(url, req) {
   const startTime = performance.now();
-  const resp = cy.request({
-    method: 'POST',
-    url: url,
-    headers: {
-      'x-oround-token': getToken(),
-    },
-    body: req,
-  });
-  const endTime = performance.now();
-  Cypress.env('runningTime', endTime - startTime);
-  return resp;
+  return cy
+    .request({
+      method: 'POST',
+      url: url,
+      headers: {
+        'x-oround-token': getToken(),
+      },
+      body: req,
+    })
+    .then(({ body }) => {
+      const endTime = performance.now();
+      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+    });
 }
 
 export function put(url, req) {
   const startTime = performance.now();
-  const resp = cy.request({
-    method: 'PUT',
-    url: url,
-    headers: {
-      'x-oround-token': getToken(),
-    },
-    body: req,
-  });
-  const endTime = performance.now();
-  Cypress.env('runningTime', endTime - startTime);
-  return resp;
+  return cy
+    .request({
+      method: 'PUT',
+      url: url,
+      headers: {
+        'x-oround-token': getToken(),
+      },
+      body: req,
+    })
+    .then(({ body }) => {
+      const endTime = performance.now();
+      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+    });
 }
 
 export function del(url, req) {
   const startTime = performance.now();
-  const resp = cy.request({
-    method: 'DELETE',
-    url: url,
-    headers: {
-      'x-oround-token': getToken(),
-    },
-    body: req,
-  });
-  const endTime = performance.now();
-  Cypress.env('runningTime', endTime - startTime);
-  return resp;
+  return cy
+    .request({
+      method: 'DELETE',
+      url: url,
+      headers: {
+        'x-oround-token': getToken(),
+      },
+      body: req,
+    })
+    .then(({ body }) => {
+      const endTime = performance.now();
+      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+    });
 }
