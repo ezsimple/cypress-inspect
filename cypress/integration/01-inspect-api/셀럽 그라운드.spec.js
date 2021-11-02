@@ -29,8 +29,8 @@ describe('셀럽 그라운드', () => {
   });
 
   it('셀럽 그라운드 정보', () => {
-    const q = 0;
-    const url = host + '/api/v1/celeb-ground/ground/{shopId}';
+    const shopId = 'bavaa';
+    const url = host + '/api/v1/celeb-ground/ground/' + shopId;
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);

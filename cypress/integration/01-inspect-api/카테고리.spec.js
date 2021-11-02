@@ -48,4 +48,15 @@ describe('카테고리 (jhpark)', () => {
       });
     });
   });
+
+  it('셀럽 카테고리 전체 목록 조회', () => {
+    const artistMemberNo = 5;
+    const url =
+      host + '/api/v1/display/category/celeb-ground/' + artistMemberNo;
+    const req = {};
+    get(url, req).should((response) => {
+      expect(response.status).to.eq(200);
+      report(url, response);
+    });
+  });
 });
