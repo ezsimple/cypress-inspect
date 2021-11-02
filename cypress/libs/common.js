@@ -7,11 +7,9 @@ export function prettyJSON(response) {
 export function report(url, response) {
   const host = Cypress.env('host-api');
   const uri = url.replace(host, '');
-  console.log(
-    uri,
-    '(' + getRunningTime() + ')' + '\n',
-    response != null ? prettyJSON(response) : ''
-  );
+  const runningTime =
+    '(' + getRunningTime() + ')' + (response == null ? '' : '\n');
+  console.log(uri, runningTime, response != null ? prettyJSON(response) : '');
 }
 
 export function login(url, req) {
