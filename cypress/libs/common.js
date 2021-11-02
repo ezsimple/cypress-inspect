@@ -23,7 +23,7 @@ export function login(url, req) {
   cy.request({
     method: 'POST',
     url: _url,
-    body: req ? req : { id: 'test5@upleat.com', password: 'qwer1234' },
+    body: req ? req : { id: 'test5@upleat.com', password: 'qwer1234!@#' },
   })
     .then(({ body }) => {
       const { accessToken } = body.token;
