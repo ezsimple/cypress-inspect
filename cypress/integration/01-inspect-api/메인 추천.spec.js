@@ -1,6 +1,6 @@
 import { get, login, report } from '../../libs/common';
 
-describe('메인 추천', () => {
+describe('메인 추천 (jhpark)', () => {
   const host = Cypress.env('host-api');
   before(() => {
     login();

@@ -1,6 +1,6 @@
 import { del, get, login, put, report } from '../../libs/common';
 
-describe('셀럽 그라운드 아트워크', () => {
+describe('셀럽 그라운드 아트워크 (jhpark)', () => {
   const host = Cypress.env('host-api');
   before(() => {
     login();

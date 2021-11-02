@@ -1,6 +1,6 @@
 import { del, get, login, put, report } from '../../libs/common';
 
-describe('셀럽 그라운드 상품', () => {
+describe('셀럽 그라운드 상품 (jhpark)', () => {
   const host = Cypress.env('host-api');
   before(() => {
     login();
