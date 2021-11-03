@@ -69,7 +69,7 @@ describe('공통 API', () => {
     });
   });
 
-  it('아트워크 상품 검색(페이징)', () => {
+  it('아트워크 상품 검색(페이징) (mhlee)', () => {
     const queryString = '아트';
     const url = host + '/api/v1/search/art-products/' + queryString;
     const req = {};
@@ -79,7 +79,7 @@ describe('공통 API', () => {
     });
   });
 
-  it('아트워크 검색(페이징)', () => {
+  it('아트워크 검색(페이징) (mhlee)', () => {
     const queryString = '상품';
     const url = host + '/api/v1/search/artworks/' + queryString;
     const req = {};

@@ -1,6 +1,6 @@
 import { del, get, login, post, put, report } from '../../libs/common';
 
-describe('셀럽 기획전', () => {
+describe('셀럽 기획전 (mhlee)', () => {
   const host = Cypress.env('host-api');
 
   const artistMemberNo = 5;

@@ -28,7 +28,7 @@ describe('아트워크', () => {
   //   });
   // });
 
-  it('(셀럽그라운드 전용) 아트워크 데이터', () => {
+  it('(셀럽그라운드 전용) 아트워크 데이터 (김과장)', () => {
     const artistMemberNo = 5;
     const url =
       host + '/api/v1/celeb-ground/' + artistMemberNo + '/artwork/data';

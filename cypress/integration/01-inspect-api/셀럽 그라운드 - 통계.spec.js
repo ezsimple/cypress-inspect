@@ -1,6 +1,6 @@
 import { get, login, post, put, report } from '../../libs/common';
 
-describe('셀럽 그라운드 - 통계', () => {
+describe('셀럽 그라운드 - 통계 (mhlee)', () => {
   const host = Cypress.env('host-api');
   before(() => {
     login();

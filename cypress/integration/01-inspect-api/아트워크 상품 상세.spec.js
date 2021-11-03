@@ -1,6 +1,6 @@
 import { get, login, report } from '../../libs/common';
 
-describe('아트워크 상품 상세', () => {
+describe('아트워크 상품 상세 (mhlee)', () => {
   const host = Cypress.env('host-api');
   before(() => {
     login();

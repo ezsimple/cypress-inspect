@@ -52,7 +52,7 @@ describe('장바구니', () => {
   //   });
   // });
 
-  it('장바구니 수정화면 상품 옵션 목록', () => {
+  it('장바구니 수정화면 상품 옵션 목록 (mhlee)', () => {
     const cartIndex = 14;
     const url = host + '/api/v1/orderCart/options/' + cartIndex;
     const req = {};
