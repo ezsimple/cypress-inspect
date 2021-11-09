@@ -5,11 +5,30 @@ export function prettyJSON(response) {
 }
 
 export function report(url, response) {
-  const host = Cypress.env('host-api');
+  const host = Cypress.config().baseUrl;
   const uri = url.replace(host, '');
   const runningTime =
     '(' + getRunningTime() + ')' + (response == null ? '' : '\n');
   console.log(uri, runningTime, response != null ? prettyJSON(response) : '');
+}
+
+export function adminLogin(url, req) {
+  const host = Cypress.env('host-bo');
+  const _url = url ? url : host + '/bo/adminLoginOut/loginProc';
+  const startTime = performance.now();
+  cy.request({
+    method: 'POST',
+    url: _url,
+    body: req ? req : { adminId: 'administrator', adminPassword: '1q2w3e4r' },
+  })
+    .then(({ body }) => {
+      console.log(body);
+      const endTime = performance.now();
+      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+    })
+    .should((response) => {
+      report(_url, null);
+    });
 }
 
 export function login(url, req) {
