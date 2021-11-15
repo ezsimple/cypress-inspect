@@ -4,7 +4,7 @@ export function prettyJSON(response) {
   return JSON.stringify(response.body, null, 2);
 }
 
-export function report(url, response) {
+export function report(url, req, response) {
   const host = Cypress.config().baseUrl;
   const uri = url.replace(host, '');
   const runningTime =
@@ -73,6 +73,10 @@ export function getRunningTime() {
 
 export function get(url, req) {
   const startTime = performance.now();
+  const urlParameters = Object.entries(req)
+    .map((e) => e.join('='))
+    .join('&');
+  if (urlParameters) url += '?' + urlParameters;
   return cy
     .request({
       method: 'GET',
@@ -80,7 +84,6 @@ export function get(url, req) {
       headers: {
         'x-oround-token': getToken(),
       },
-      body: req,
     })
     .then(({ body }) => {
       const endTime = performance.now();

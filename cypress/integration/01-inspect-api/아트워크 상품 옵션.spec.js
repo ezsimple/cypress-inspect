@@ -18,7 +18,7 @@ describe('아트워크 상품 옵션(★)', () => {
     };
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -30,7 +30,7 @@ describe('아트워크 상품 옵션(★)', () => {
       const req = {};
       get(url, req).should((response) => {
         expect(response.status).to.eq(200);
-        report(url, response);
+        report(url, req, response);
       });
     }
   });

@@ -15,7 +15,7 @@ describe('셀럽 시리즈 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -43,7 +43,7 @@ describe('셀럽 시리즈 (mhlee)', () => {
     post(url, req).should((response) => {
       expect(response.status).to.eq(201); // 등록은 201로 검사
       const { seriesIndex } = response.body;
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -71,7 +71,7 @@ describe('셀럽 시리즈 (mhlee)', () => {
     put(url, req).should((response) => {
       expect(response.status).to.eq(200);
       const { seriesIndex } = response.body;
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -81,7 +81,7 @@ describe('셀럽 시리즈 (mhlee)', () => {
     del(url, req).should((response) => {
       expect(response.status).to.eq(200);
       // response.body.seriesIndex 없음
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -90,7 +90,7 @@ describe('셀럽 시리즈 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -100,7 +100,7 @@ describe('셀럽 시리즈 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });

@@ -14,7 +14,7 @@ describe('셀럽 본인인증', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -24,7 +24,7 @@ describe('셀럽 본인인증', () => {
   //   const req = {};
   //   post(url, req).should((response) => {
   //     expect(response.status).to.eq(201);
-  //     report(url, response);
+  //     report(url, req, response);
   //   });
   // });
 });

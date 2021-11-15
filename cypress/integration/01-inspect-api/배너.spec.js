@@ -14,7 +14,7 @@ describe('배너', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });

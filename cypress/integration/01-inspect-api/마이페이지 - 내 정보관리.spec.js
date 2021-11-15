@@ -14,7 +14,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -24,7 +24,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -34,7 +34,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -44,7 +44,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -54,7 +54,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -64,7 +64,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -74,7 +74,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -84,7 +84,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -94,7 +94,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -104,7 +104,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -114,7 +114,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -124,7 +124,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     del(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -134,7 +134,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -144,7 +144,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -154,7 +154,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     put(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -164,7 +164,7 @@ describe('마이페이지 - 내 정보관리', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });

@@ -12,7 +12,7 @@ describe('셀럽 그라운드 - 통계 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -23,7 +23,7 @@ describe('셀럽 그라운드 - 통계 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -33,7 +33,7 @@ describe('셀럽 그라운드 - 통계 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -43,7 +43,7 @@ describe('셀럽 그라운드 - 통계 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -53,7 +53,7 @@ describe('셀럽 그라운드 - 통계 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -63,7 +63,7 @@ describe('셀럽 그라운드 - 통계 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -72,7 +72,7 @@ describe('셀럽 그라운드 - 통계 (mhlee)', () => {
     const req = { gaId: 'GAKey1' };
     post(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -81,7 +81,7 @@ describe('셀럽 그라운드 - 통계 (mhlee)', () => {
     const req = { gaId: 'GAKey2' };
     put(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });

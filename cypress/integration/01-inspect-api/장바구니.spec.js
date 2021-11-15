@@ -15,7 +15,7 @@ describe('장바구니', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -38,7 +38,7 @@ describe('장바구니', () => {
   //   };
   //   post(url, req).should((response) => {
   //     expect(response.status).to.eq(201);
-  //     report(url, response);
+  //     report(url, req, response);
   //   });
   // });
 
@@ -48,7 +48,7 @@ describe('장바구니', () => {
   //   const req = {};
   //   put(url, req).should((response) => {
   //     expect(response.status).to.eq(200);
-  //     report(url, response);
+  //     report(url, req, response);
   //   });
   // });
 
@@ -58,7 +58,7 @@ describe('장바구니', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });

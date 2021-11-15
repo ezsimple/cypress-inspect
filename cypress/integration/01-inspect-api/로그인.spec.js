@@ -12,7 +12,7 @@ describe('기획전', () => {
     };
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -21,7 +21,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -30,7 +30,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -39,7 +39,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -51,7 +51,7 @@ describe('기획전', () => {
     };
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -60,7 +60,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -69,7 +69,7 @@ describe('기획전', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -78,7 +78,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -87,7 +87,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -96,7 +96,7 @@ describe('기획전', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -105,7 +105,7 @@ describe('기획전', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -114,7 +114,7 @@ describe('기획전', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });

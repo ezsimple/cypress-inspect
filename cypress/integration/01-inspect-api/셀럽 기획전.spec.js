@@ -16,7 +16,7 @@ describe('셀럽 기획전 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -35,7 +35,7 @@ describe('셀럽 기획전 (mhlee)', () => {
   //   post(url, req).should((response) => {
   //     expect(response.status).to.eq(201); // 등록은 201로 검사
   //     const { exhibitionIndex } = response.body;
-  //     report(url, response);
+  //     report(url, req, response);
   //   });
   // });
 
@@ -54,7 +54,7 @@ describe('셀럽 기획전 (mhlee)', () => {
   //   put(url, req).should((response) => {
   //     expect(response.status).to.eq(200);
   //     const { exhibitionIndex } = response.body;
-  //     report(url, response);
+  //     report(url, req, response);
   //   });
   // });
 
@@ -64,7 +64,7 @@ describe('셀럽 기획전 (mhlee)', () => {
   //   del(url, req).should((response) => {
   //     expect(response.status).to.eq(200);
   //     // response.body.exhibitionIndex 없음
-  //     report(url, response);
+  //     report(url, req, response);
   //   });
   // });
 
@@ -74,7 +74,7 @@ describe('셀럽 기획전 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -87,7 +87,7 @@ describe('셀럽 기획전 (mhlee)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });

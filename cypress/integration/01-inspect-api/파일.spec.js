@@ -14,7 +14,7 @@ describe('파일', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });

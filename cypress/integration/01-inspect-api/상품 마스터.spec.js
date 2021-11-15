@@ -11,7 +11,7 @@ describe('상품 마스터', () => {
     const url = host + '/api/v1/product/master/' + productCode + '/info';
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });

@@ -14,7 +14,7 @@ describe('카테고리 (jhpark)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
       const { categorylist } = response.body;
       let categories = [];
       categorylist.forEach((element) => {
@@ -32,7 +32,7 @@ describe('카테고리 (jhpark)', () => {
       const req = {};
       get(url, req).should((response) => {
         expect(response.status).to.eq(200);
-        report(url, response);
+        report(url, req, response);
       });
     });
   });
@@ -44,7 +44,7 @@ describe('카테고리 (jhpark)', () => {
       const req = {};
       get(url, req).should((response) => {
         expect(response.status).to.eq(200);
-        report(url, response);
+        report(url, req, response);
       });
     });
   });
@@ -56,7 +56,7 @@ describe('카테고리 (jhpark)', () => {
     const req = {};
     get(url, req).should((response) => {
       expect(response.status).to.eq(200);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });

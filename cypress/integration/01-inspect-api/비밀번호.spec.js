@@ -14,7 +14,7 @@ describe('비밀번호', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 
@@ -24,7 +24,7 @@ describe('비밀번호', () => {
     const req = {};
     post(url, req).should((response) => {
       expect(response.status).to.eq(201);
-      report(url, response);
+      report(url, req, response);
     });
   });
 });
