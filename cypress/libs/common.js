@@ -16,6 +16,7 @@ export function adminLogin(url, req) {
   const host = Cypress.env('host-bo');
   const _url = url ? url : host + '/bo/adminLoginOut/loginProc';
   const startTime = performance.now();
+  Cypress.env('startTime', startTime);
   cy.request({
     method: 'POST',
     url: _url,
@@ -24,7 +25,10 @@ export function adminLogin(url, req) {
     .then(({ body }) => {
       console.log(body);
       const endTime = performance.now();
-      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+      Cypress.env(
+        'runningTime',
+        (endTime - Cypress.env('startTime')).toFixed(0)
+      );
     })
     .should((response) => {
       report(_url, null);
@@ -35,19 +39,32 @@ export function login(url, req) {
   // 토큰이 invalid할 경우 처리가 안됩니다.
   // const token = JSON.stringify(window.sessionStorage.getItem('x-oround-token'));
   // if (token) return;
+
+  // 서버 개발, 프론트 개발 모두 테스트 사용자 아래로 사용하시기 바랍니다.
+  // 강제사항 입니다.
+  // ktest01@gmail.com / qwer1234!@# --> 오라운더(가입지역 한국)
+  // jtest01@gmail.com / qwer1234!@# --> 오라운더(가입지역 일본)
+  // etest01@gmail.com / qwer1234!@# --> 오라운더(가입지역 기타해외)
+  // celeb01@gmail.com / qwer1234!@# --> 셀럽(가입지역 한국)
+
   const _url = url ? url : '/api/v1/login/email';
   const startTime = performance.now();
+  Cypress.env('startTime', startTime);
   cy.request({
     method: 'POST',
     url: _url,
-    body: req ? req : { id: 'test5@upleat.com', password: 'qwerasdf123!' },
+    // body: req ? req : { id: 'test5@upleat.com', password: 'qwerasdf123!' },
+    body: req ? req : { id: 'ktest01@gmail.com', password: 'qwer1234!@#' },
   })
     .then(({ body }) => {
       const { accessToken } = body.token;
       window.sessionStorage.setItem('x-oround-token', accessToken); // 동기화 시킬수 없음
       Cypress.env('token', accessToken);
       const endTime = performance.now();
-      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+      Cypress.env(
+        'runningTime',
+        (endTime - Cypress.env('startTime')).toFixed(0)
+      );
     })
     .should((response) => {
       report(_url, null);
@@ -73,6 +90,7 @@ export function getRunningTime() {
 
 export function get(url, req) {
   const startTime = performance.now();
+  Cypress.env('startTime', startTime);
   const urlParameters = Object.entries(req)
     .map((e) => e.join('='))
     .join('&');
@@ -87,12 +105,16 @@ export function get(url, req) {
     })
     .then(({ body }) => {
       const endTime = performance.now();
-      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+      Cypress.env(
+        'runningTime',
+        (endTime - Cypress.env('startTime')).toFixed(0)
+      );
     });
 }
 
 export function post(url, req) {
   const startTime = performance.now();
+  Cypress.env('startTime', startTime);
   return cy
     .request({
       method: 'POST',
@@ -104,12 +126,16 @@ export function post(url, req) {
     })
     .then(({ body }) => {
       const endTime = performance.now();
-      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+      Cypress.env(
+        'runningTime',
+        (endTime - Cypress.env('startTime')).toFixed(0)
+      );
     });
 }
 
 export function put(url, req) {
   const startTime = performance.now();
+  Cypress.env('startTime', startTime);
   return cy
     .request({
       method: 'PUT',
@@ -121,12 +147,16 @@ export function put(url, req) {
     })
     .then(({ body }) => {
       const endTime = performance.now();
-      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+      Cypress.env(
+        'runningTime',
+        (endTime - Cypress.env('startTime')).toFixed(0)
+      );
     });
 }
 
 export function del(url, req) {
   const startTime = performance.now();
+  Cypress.env('startTime', startTime);
   return cy
     .request({
       method: 'DELETE',
@@ -138,6 +168,9 @@ export function del(url, req) {
     })
     .then(({ body }) => {
       const endTime = performance.now();
-      Cypress.env('runningTime', (endTime - startTime).toFixed(0));
+      Cypress.env(
+        'runningTime',
+        (endTime - Cypress.env('startTime')).toFixed(0)
+      );
     });
 }
