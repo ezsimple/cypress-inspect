@@ -22,74 +22,16 @@ describe('아트워크 상품 옵션(★)', () => {
   //   });
   // });
 
-  it('/options (24214)', () => {
-    const o = 24214;
-    const host = Cypress.env('host-api');
-    const url = host + '/api/v1/art-product/' + o + '/options';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
-  it('/options (21716)', () => {
-    const o = 21716;
-    const host = Cypress.env('host-api');
-    const url = host + '/api/v1/art-product/' + o + '/options';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
-  it('/options (21246)', () => {
-    const o = 21246;
-    const host = Cypress.env('host-api');
-    const url = host + '/api/v1/art-product/' + o + '/options';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
-  it('/options (21190)', () => {
-    const o = 21190;
-    const host = Cypress.env('host-api');
-    const url = host + '/api/v1/art-product/' + o + '/options';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
-  it('/options (21246)', () => {
-    const o = 21246;
-    const host = Cypress.env('host-api');
-    const url = host + '/api/v1/art-product/' + o + '/options';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
-  it('/options (24655)', () => {
-    const o = 24655;
-    const host = Cypress.env('host-api');
-    const url = host + '/api/v1/art-product/' + o + '/options';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
-  it('/options (22129)', () => {
-    const o = 22129;
-    const host = Cypress.env('host-api');
-    const url = host + '/api/v1/art-product/' + o + '/options';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      report(url, req, response);
+  it('/options', () => {
+    const indexes = new Set([24214, 25079]);
+    indexes.forEach((o) => {
+      const host = Cypress.env('host-api');
+      const url = host + '/api/v1/art-product/' + o + '/options';
+      const req = {};
+      get(url, req).should((response) => {
+        expect(response.status).to.eq(200);
+        report(url, req, response);
+      });
     });
   });
 });
