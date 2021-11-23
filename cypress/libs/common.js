@@ -48,8 +48,7 @@ export function login(url, req) {
   // celeb01@gmail.com / qwer1234!@# --> 셀럽(가입지역 한국)
 
   const _url = url ? url : '/api/v1/login/email';
-  const startTime = performance.now();
-  Cypress.env('startTime', startTime);
+  Cypress.env('startTime', performance.now());
   cy.request({
     method: 'POST',
     url: _url,
@@ -89,8 +88,7 @@ export function getRunningTime() {
 }
 
 export function get(url, req) {
-  const startTime = performance.now();
-  Cypress.env('startTime', startTime);
+  Cypress.env('startTime', performance.now());
   const urlParameters = Object.entries(req)
     .map((e) => e.join('='))
     .join('&');
@@ -113,8 +111,7 @@ export function get(url, req) {
 }
 
 export function post(url, req) {
-  const startTime = performance.now();
-  Cypress.env('startTime', startTime);
+  Cypress.env('startTime', performance.now());
   return cy
     .request({
       method: 'POST',
@@ -134,8 +131,7 @@ export function post(url, req) {
 }
 
 export function put(url, req) {
-  const startTime = performance.now();
-  Cypress.env('startTime', startTime);
+  Cypress.env('startTime', performance.now());
   return cy
     .request({
       method: 'PUT',
@@ -155,8 +151,7 @@ export function put(url, req) {
 }
 
 export function del(url, req) {
-  const startTime = performance.now();
-  Cypress.env('startTime', startTime);
+  Cypress.env('startTime', performance.now());
   return cy
     .request({
       method: 'DELETE',
