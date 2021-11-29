@@ -3,8 +3,8 @@ import { get, login, report } from '../../libs/common';
 describe('셀럽 시리즈 (mhlee)', () => {
   const host = Cypress.env('host-api');
 
-  const artistMemberNo = 5;
-  let seriesIndex = 1;
+  const artistMemberNo = 64;
+  let seriesIndex = 21192;
 
   before(() => {
     login();
@@ -85,22 +85,22 @@ describe('셀럽 시리즈 (mhlee)', () => {
   //   });
   // });
 
-  it('아티스트별 시리즈 목록(페이징)', () => {
-    const url = host + '/api/v1/celeb/' + artistMemberNo + '/registered/series';
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
-
-  // it('아티스트별 시리즈 상세(페이징)', () => {
-  //   const url =
-  //     '/api/v1/celeb/' + artistMemberNo + '/registered/series/' + seriesIndex;
+  // it('아티스트별 시리즈 목록(페이징)', () => {
+  //   const url = host + '/api/v1/celeb/' + artistMemberNo + '/registered/series';
   //   const req = {};
   //   get(url, req).should((response) => {
   //     expect(response.status).to.eq(200);
   //     report(url, req, response);
   //   });
   // });
+
+  it('아티스트별 시리즈 상세(페이징)', () => {
+    const url =
+      '/api/v1/celeb/' + artistMemberNo + '/registered/series/' + seriesIndex;
+    const req = {};
+    get(url, req).should((response) => {
+      expect(response.status).to.eq(200);
+      report(url, req, response);
+    });
+  });
 });

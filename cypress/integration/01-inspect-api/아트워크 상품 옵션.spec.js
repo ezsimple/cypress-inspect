@@ -23,7 +23,10 @@ describe('아트워크 상품 옵션(★)', () => {
   // });
 
   it('/options', () => {
-    const indexes = new Set([24214, 25079]);
+    const indexes = new Set([
+      /* 24214, 25079, 21178, 26985,*/ 24755 /*메탈/포맥스*/, 27082 /*글리터*/,
+      28887 /*갤럭시*/,
+    ]);
     indexes.forEach((o) => {
       const host = Cypress.env('host-api');
       const url = host + '/api/v1/art-product/' + o + '/options';
