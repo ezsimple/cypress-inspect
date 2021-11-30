@@ -18,19 +18,9 @@ describe('셀럽 그라운드 - 정산 (mhlee)', () => {
     });
   });
 
-  it('이월/보류내역', () => {
-    const q = '2021-11-04';
-    const url = host + '/api/v1/celeb/settle/hold/' + q;
-    const req = {};
-    get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
-
-  // it('정산 상세 내역', () => {
-  //   const q = '2021-11-01';
-  //   const url = host + '/api/v1/celeb/settle/detail/' + q;
+  // it('이월/보류내역', () => {
+  //   const q = '2021-11-04';
+  //   const url = host + '/api/v1/celeb/settle/hold/' + q;
   //   const req = {};
   //   get(url, req).should((response) => {
   //     expect(response.status).to.eq(200);
@@ -38,8 +28,9 @@ describe('셀럽 그라운드 - 정산 (mhlee)', () => {
   //   });
   // });
 
-  // it('정산 계좌 정보 조회(김혁)', () => {
-  //   const url = host + '/api/v1/celeb/settle';
+  // it('정산 상세 내역', () => {
+  //   const q = '2021-11-01';
+  //   const url = host + '/api/v1/celeb/settle/detail/' + q;
   //   const req = {};
   //   get(url, req).should((response) => {
   //     expect(response.status).to.eq(200);
