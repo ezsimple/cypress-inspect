@@ -6,5 +6,7 @@
     "cypress": "8.6.0",
     "cypress-wait-until": "^1.7.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  }
 }

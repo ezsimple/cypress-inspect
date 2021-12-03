@@ -1,4 +1,5 @@
 import 'cypress-wait-until';
+import jwt from 'jsonwebtoken';
 
 export function prettyJSON(response) {
   return JSON.stringify(response.body, null, 2);
@@ -59,6 +60,8 @@ export function login(url, req) {
       const { accessToken } = body.token;
       window.sessionStorage.setItem('x-oround-token', accessToken); // 동기화 시킬수 없음
       Cypress.env('token', accessToken);
+      const userInfo = jwt.decode(accessToken);
+      Cypress.env('memberNo', userInfo.memberNo);
       const endTime = performance.now();
       Cypress.env(
         'runningTime',
