@@ -11,7 +11,7 @@ describe('공통 API', () => {
   //   const url = host + '/api/v1/common-code-list/' + typeCode;
   //   const req = {};
   //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     report(url, req, response);
   //   });
   // });
@@ -21,7 +21,7 @@ describe('공통 API', () => {
   //   const url = host + '/api/v1/common-code-name/' + commonCode;
   //   const req = {};
   //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     report(url, req, response);
   //   });
   // });
@@ -30,7 +30,7 @@ describe('공통 API', () => {
   //   const url = host + '/api/v1/kisa/ipascc';
   //   const req = {};
   //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     report(url, req, response);
   //   });
   // });
@@ -45,7 +45,7 @@ describe('공통 API', () => {
   //     shippingIndex: 0,
   //   };
   //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     report(url, req, response);
   //   });
   // });
@@ -54,7 +54,7 @@ describe('공통 API', () => {
   //   const url = host + '/api/v1/oround-info';
   //   const req = {};
   //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     report(url, req, response);
   //   });
   // });
@@ -64,7 +64,7 @@ describe('공통 API', () => {
   //   const url = host + '/api/v1/sagawa/post/' + postCode;
   //   const req = {};
   //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     report(url, req, response);
   //   });
   // });
@@ -74,7 +74,7 @@ describe('공통 API', () => {
   //   const url = host + '/api/v1/search/art-products/' + queryString;
   //   const req = {};
   //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     report(url, req, response);
   //   });
   // });
@@ -84,7 +84,7 @@ describe('공통 API', () => {
   //   const url = host + '/api/v1/search/artworks/' + queryString;
   //   const req = {};
   //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     report(url, req, response);
   //   });
   // });
@@ -93,7 +93,7 @@ describe('공통 API', () => {
     const url = host + '/api/v1/search/art-products';
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });
@@ -102,7 +102,7 @@ describe('공통 API', () => {
     const url = host + '/api/v1/search/artworks';
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });

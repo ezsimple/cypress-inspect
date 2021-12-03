@@ -6,15 +6,20 @@ describe('BO - 정산 (mhlee)', () => {
     // adminLogin();
   });
 
-  it('정산확정 내역', () => {
-    const url = host + '/bo/settleComplete/info';
-    const req = {
-      shopId: null,
-      memberId: 'test@upleat.com',
-      payAccountType: null,
-    };
+  // it('정산대기 Summary(mhlee)', () => {
+  //   const url = host + '/bo/settleWait/summary';
+  //   const req = {};
+  //   post(url, req).should((response) => {
+  //     // expect(response.status).to.eq(200);
+  //     report(url, req, response);
+  //   });
+  // });
+
+  it('정산대기 List(mhlee)', () => {
+    const url = host + '/bo/settleWait/list';
+    const req = {};
     post(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });

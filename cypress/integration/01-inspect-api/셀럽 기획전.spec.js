@@ -15,7 +15,7 @@ describe('셀럽 기획전 (mhlee)', () => {
       host + '/api/v1/celeb/' + artistMemberNo + '/exhibition/art-products';
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });
@@ -52,7 +52,7 @@ describe('셀럽 기획전 (mhlee)', () => {
   //   };
 
   //   put(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     const { exhibitionIndex } = response.body;
   //     report(url, req, response);
   //   });
@@ -62,7 +62,7 @@ describe('셀럽 기획전 (mhlee)', () => {
   //   const url = host + '/api/v1/celeb/exhibition/' + exhibitionIndex;
   //   const req = null;
   //   del(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     // response.body.exhibitionIndex 없음
   //     report(url, req, response);
   //   });
@@ -73,7 +73,7 @@ describe('셀럽 기획전 (mhlee)', () => {
       host + '/api/v1/celeb/' + artistMemberNo + '/registered/exhibitions';
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });
@@ -86,7 +86,7 @@ describe('셀럽 기획전 (mhlee)', () => {
       exhibitionIndex;
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });

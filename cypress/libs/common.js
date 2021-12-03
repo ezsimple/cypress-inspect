@@ -100,6 +100,7 @@ export function get(url, req) {
       headers: {
         'x-oround-token': getToken(),
       },
+      failOnStatusCode: false,
     })
     .then(({ body }) => {
       const endTime = performance.now();

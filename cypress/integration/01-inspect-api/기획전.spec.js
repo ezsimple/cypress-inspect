@@ -11,7 +11,7 @@ describe('기획전', () => {
     const url = host + '/api/v1/exhibition/artProduct/' + index;
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       const { exhibitionIndex } = response.body.detailItem;
       expect(exhibitionIndex).to.eq(index);
       report(url, req, response);
@@ -23,7 +23,7 @@ describe('기획전', () => {
     const url = host + '/api/v1/exhibition/artwork/' + index;
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       const { exhibitionIndex } = response.body.detailItem;
       expect(exhibitionIndex).to.eq(index);
       report(url, req, response);
@@ -34,7 +34,7 @@ describe('기획전', () => {
     const url = host + '/api/v1/exhibition/list';
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });

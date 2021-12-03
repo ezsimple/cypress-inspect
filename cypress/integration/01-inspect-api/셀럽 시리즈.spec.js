@@ -3,21 +3,22 @@ import { get, login, report } from '../../libs/common';
 describe('셀럽 시리즈 (mhlee)', () => {
   const host = Cypress.env('host-api');
 
-  const artistMemberNo = 64;
+  const artistMemberNo = 70;
   let seriesIndex = 21192;
 
   before(() => {
-    login();
+    const req = { id: 'jonghyuck59@gmail.com', password: 'triplex59@' }; // memberNo : 70
+    login(null, req);
   });
 
-  // it('아티스트별 시리즈 대상 아트워크 상품 목록(페이징)', () => {
-  //   const url = host + '/api/v1/celeb/' + artistMemberNo + '/series/artworks';
-  //   const req = {};
-  //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
-  //     report(url, req, response);
-  //   });
-  // });
+  it('아티스트별 시리즈 대상 아트워크 상품 목록(페이징)', () => {
+    const url = host + '/api/v1/celeb/' + artistMemberNo + '/series/artworks';
+    const req = {};
+    get(url, req).should((response) => {
+      // expect(response.status).to.eq(200);
+      report(url, req, response);
+    });
+  });
 
   // it('아티스트별 시리즈 등록', () => {
   //   const url = host + '/api/v1/celeb/series';
@@ -69,7 +70,7 @@ describe('셀럽 시리즈 (mhlee)', () => {
   //   };
 
   //   put(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     const { seriesIndex } = response.body;
   //     report(url, req, response);
   //   });
@@ -79,28 +80,28 @@ describe('셀럽 시리즈 (mhlee)', () => {
   //   const url = host + '/api/v1/celeb/series/' + seriesIndex;
   //   const req = null;
   //   del(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
+  //     // expect(response.status).to.eq(200);
   //     // response.body.seriesIndex 없음
   //     report(url, req, response);
   //   });
   // });
 
-  // it('아티스트별 시리즈 목록(페이징)', () => {
-  //   const url = host + '/api/v1/celeb/' + artistMemberNo + '/registered/series';
-  //   const req = {};
-  //   get(url, req).should((response) => {
-  //     expect(response.status).to.eq(200);
-  //     report(url, req, response);
-  //   });
-  // });
-
-  it('아티스트별 시리즈 상세(페이징)', () => {
-    const url =
-      '/api/v1/celeb/' + artistMemberNo + '/registered/series/' + seriesIndex;
+  it('아티스트별 시리즈 목록(페이징)', () => {
+    const url = host + '/api/v1/celeb/' + artistMemberNo + '/registered/series';
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });
+
+  // it('아티스트별 시리즈 상세(페이징)', () => {
+  //   const url =
+  //     '/api/v1/celeb/' + artistMemberNo + '/registered/series/' + seriesIndex;
+  //   const req = {};
+  //   get(url, req).should((response) => {
+  //     // expect(response.status).to.eq(200);
+  //     report(url, req, response);
+  //   });
+  // });
 });

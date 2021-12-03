@@ -13,7 +13,7 @@ describe('메인 추천 (jhpark)', () => {
     const url = host + '/api/v1/main/recentHistory';
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });
@@ -23,7 +23,7 @@ describe('메인 추천 (jhpark)', () => {
     const url = host + '/api/v1/main/recommendArtist';
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });
@@ -33,7 +33,7 @@ describe('메인 추천 (jhpark)', () => {
     const url = host + '/api/v1/main/recommendArtwork';
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });
@@ -43,7 +43,7 @@ describe('메인 추천 (jhpark)', () => {
     const url = host + '/api/v1/main/recommendProduct';
     const req = {};
     get(url, req).should((response) => {
-      expect(response.status).to.eq(200);
+      // expect(response.status).to.eq(200);
       report(url, req, response);
     });
   });
