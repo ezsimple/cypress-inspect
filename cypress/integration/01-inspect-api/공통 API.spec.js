@@ -26,14 +26,14 @@ describe('공통 API', () => {
   //   });
   // });
 
-  // it('IP 국가코드조회', () => {
-  //   const url = host + '/api/v1/kisa/ipascc';
-  //   const req = {};
-  //   get(url, req).should((response) => {
-  //     // expect(response.status).to.eq(200);
-  //     report(url, req, response);
-  //   });
-  // });
+  it('IP 국가코드조회', () => {
+    const url = host + '/api/v1/kisa/ipascc';
+    const req = {};
+    get(url, req).should((response) => {
+      // expect(response.status).to.eq(200);
+      report(url, req, response);
+    });
+  });
 
   // it('배송지 조회', () => {
   //   const url = host + '/api/v1/order-shipping-info';
@@ -89,21 +89,21 @@ describe('공통 API', () => {
   //   });
   // });
 
-  it('아트워크 상품 검색(페이징) (mhlee)', () => {
-    const url = host + '/api/v1/search/art-products';
-    const req = {};
-    get(url, req).should((response) => {
-      // expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
+  // it('아트워크 상품 검색(페이징) (mhlee)', () => {
+  //   const url = host + '/api/v1/search/art-products';
+  //   const req = {};
+  //   get(url, req).should((response) => {
+  //     // expect(response.status).to.eq(200);
+  //     report(url, req, response);
+  //   });
+  // });
 
-  it('아트워크 검색(페이징) (mhlee)', () => {
-    const url = host + '/api/v1/search/artworks';
-    const req = {};
-    get(url, req).should((response) => {
-      // expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
+  // it('아트워크 검색(페이징) (mhlee)', () => {
+  //   const url = host + '/api/v1/search/artworks';
+  //   const req = {};
+  //   get(url, req).should((response) => {
+  //     // expect(response.status).to.eq(200);
+  //     report(url, req, response);
+  //   });
+  // });
 });

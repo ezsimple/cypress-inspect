@@ -1,6 +1,6 @@
 import { get, login, report } from '../../libs/common';
 
-describe('셀럽 시리즈 (mhlee)', () => {
+describe('셀럽 시리즈 ()', () => {
   const host = Cypress.env('host-api');
 
   const artistMemberNo = 70;
