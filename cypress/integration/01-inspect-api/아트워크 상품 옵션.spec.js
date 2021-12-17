@@ -23,7 +23,7 @@ describe('아트워크 상품 옵션(★)', () => {
   // });
 
   it('/options', () => {
-    const indexes = new Set([30239]);
+    const indexes = new Set([38091]);
     indexes.forEach((o) => {
       const host = Cypress.env('host-api');
       const url = host + '/api/v1/art-product/' + o + '/options';

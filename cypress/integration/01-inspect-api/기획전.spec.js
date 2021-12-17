@@ -6,8 +6,9 @@ describe('기획전', () => {
     login();
   });
 
+  const index = 66;
+
   it('기획전상세(상품)', () => {
-    const index = 38;
     const url = host + '/api/v1/exhibition/artProduct/' + index;
     const req = {};
     get(url, req).should((response) => {
@@ -19,7 +20,6 @@ describe('기획전', () => {
   });
 
   it('기획전상세(작품)', () => {
-    const index = 38;
     const url = host + '/api/v1/exhibition/artwork/' + index;
     const req = {};
     get(url, req).should((response) => {
@@ -30,12 +30,12 @@ describe('기획전', () => {
     });
   });
 
-  it('기획전 목록', () => {
-    const url = host + '/api/v1/exhibition/list';
-    const req = {};
-    get(url, req).should((response) => {
-      // expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
+  // it('기획전 목록', () => {
+  //   const url = host + '/api/v1/exhibition/list';
+  //   const req = {};
+  //   get(url, req).should((response) => {
+  //     // expect(response.status).to.eq(200);
+  //     report(url, req, response);
+  //   });
+  // });
 });

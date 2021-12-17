@@ -6,9 +6,10 @@ describe('아트워크 상품 시리즈', () => {
     login();
   });
 
+  const q = 39820;
+
   // 아트워크 상품 시리즈
   it('/series', () => {
-    const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/series';
     const req = {};
     get(url, req).should((response) => {
@@ -19,7 +20,6 @@ describe('아트워크 상품 시리즈', () => {
 
   // 아트워크 시리즈
   it('/artist/series', () => {
-    const q = '44';
     const url = host + '/api/v1/art-product/' + q + '/artist/series';
     const req = {};
     get(url, req).should((response) => {
