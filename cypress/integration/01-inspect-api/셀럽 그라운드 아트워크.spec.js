@@ -1,52 +1,53 @@
-import { del, get, login, put, report } from '../../libs/common';
+import { login } from '../../libs/common';
 
 describe('셀럽 그라운드 아트워크 (jhpark)', () => {
   const host = Cypress.env('host-api');
   before(() => {
-    login();
+    const req = { id: 'joseok76@gmail.com', password: 'as348843!@' }; // memberNo : 70
+    login(null, req);
   });
 
   // 셀럽 그라운드 아트워크
 
-  it('셀럽 그라운드 아트워크 삭제', () => {
-    const q = 0;
-    const url = host + '/api/v1/celeb-ground/{artistMemberNo}/artwork';
-    const req = {};
-    del(url, req).should((response) => {
-      // expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
+  // it('셀럽 그라운드 아트워크 삭제', () => {
+  //   const q = 0;
+  //   const url = host + '/api/v1/celeb-ground/{artistMemberNo}/artwork';
+  //   const req = {};
+  //   del(url, req).should((response) => {
+  //     // expect(response.status).to.eq(200);
+  //     report(url, req, response);
+  //   });
+  // });
 
-  it('셀럽 그라운드 아트워크 목록', () => {
-    const q = 0;
-    const url = host + '/api/v1/celeb-ground/{artistMemberNo}/artwork';
-    const req = {};
-    get(url, req).should((response) => {
-      // expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
+  // it('셀럽 그라운드 아트워크 목록', () => {
+  //   const q = 0;
+  //   const url = host + '/api/v1/celeb-ground/{artistMemberNo}/artwork';
+  //   const req = {};
+  //   get(url, req).should((response) => {
+  //     // expect(response.status).to.eq(200);
+  //     report(url, req, response);
+  //   });
+  // });
 
-  it('셀럽 그라운드 아트워크 공개여부', () => {
-    const q = 0;
-    const url =
-      host + '/api/v1/celeb-ground/{artistMemberNo}/artwork/openYn/{openYn}';
-    const req = {};
-    put(url, req).should((response) => {
-      // expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
+  // it('셀럽 그라운드 아트워크 공개여부', () => {
+  //   const q = 0;
+  //   const url =
+  //     host + '/api/v1/celeb-ground/{artistMemberNo}/artwork/openYn/{openYn}';
+  //   const req = {};
+  //   put(url, req).should((response) => {
+  //     // expect(response.status).to.eq(200);
+  //     report(url, req, response);
+  //   });
+  // });
 
-  it('셀럽 그라운드 아트워크 순서변경', () => {
-    const q = 0;
-    const url =
-      host + '/api/v1/celeb-ground/{artistMemberNo}/artwork/sortOrder';
-    const req = {};
-    put(url, req).should((response) => {
-      // expect(response.status).to.eq(200);
-      report(url, req, response);
-    });
-  });
+  // it('셀럽 그라운드 아트워크 순서변경', () => {
+  //   const q = 0;
+  //   const url =
+  //     host + '/api/v1/celeb-ground/{artistMemberNo}/artwork/sortOrder';
+  //   const req = {};
+  //   put(url, req).should((response) => {
+  //     // expect(response.status).to.eq(200);
+  //     report(url, req, response);
+  //   });
+  // });
 });
