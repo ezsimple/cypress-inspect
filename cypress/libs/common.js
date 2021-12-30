@@ -191,3 +191,8 @@ function getHeader() {
   if (getLang()) header['x-oround-language'] = getLang();
   return header;
 }
+
+// 로그인 사용자가 셀럽인 경우
+export function getArtistMemberNo() {
+  return Cypress.env('artistMemberNo');
+}
