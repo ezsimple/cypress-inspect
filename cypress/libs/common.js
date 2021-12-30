@@ -107,11 +107,7 @@ export function get(url, req) {
     .request({
       method: 'GET',
       url: url,
-      headers: {
-        'x-oround-token': getToken(),
-        'x-oround-grounder': getCelebOrOrounder(),
-        'x-oround-language': getLang(),
-      },
+      headers: getHeader(),
       failOnStatusCode: false,
     })
     .then(({ body }) => {
@@ -129,11 +125,7 @@ export function post(url, req) {
     .request({
       method: 'POST',
       url: url,
-      headers: {
-        'x-oround-token': getToken(),
-        'x-oround-grounder': getCelebOrOrounder(),
-        'x-oround-language': getLang(),
-      },
+      headers: getHeader(),
       body: req,
     })
     .then(({ body }) => {
@@ -151,11 +143,7 @@ export function put(url, req) {
     .request({
       method: 'PUT',
       url: url,
-      headers: {
-        'x-oround-token': getToken(),
-        'x-oround-grounder': getCelebOrOrounder(),
-        'x-oround-language': getLang(),
-      },
+      headers: getHeader(),
       body: req,
     })
     .then(({ body }) => {
@@ -173,11 +161,7 @@ export function del(url, req) {
     .request({
       method: 'DELETE',
       url: url,
-      headers: {
-        'x-oround-token': getToken(),
-        'x-oround-grounder': getCelebOrOrounder(),
-        'x-oround-language': getLang(),
-      },
+      headers: getHeader(),
       body: req,
     })
     .then(({ body }) => {
@@ -197,4 +181,12 @@ export function setLang(lang) {
 function getLang() {
   const lang = Cypress.env('lang');
   return lang ? lang : 'KO';
+}
+
+function getHeader() {
+  const header = {};
+  if (getToken()) header['x-oround-token'] = getToken();
+  if (getCelebOrOrounder()) header['x-oround-grounder'] = getCelebOrOrounder();
+  if (getLang()) header['x-oround-language'] = getLang();
+  return header;
 }

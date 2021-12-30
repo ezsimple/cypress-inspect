@@ -1,10 +1,10 @@
-import { get, login, report } from '../../libs/common';
+import { get, report, login } from '../../libs/common';
 
 describe('상품 배송/교환/반품 안내 (mhlee)', () => {
   const host = Cypress.env('host-api');
   before(() => {
-    const req = { id: 'jonghyuck59@gmail.com', password: 'triplex59@' }; // memberNo : 70
-    login(null, req);
+    // const req = { id: 'jonghyuck59@gmail.com', password: 'triplex59@' }; // memberNo : 70
+    // login(null, req);
   });
 
   const q = '29904';
