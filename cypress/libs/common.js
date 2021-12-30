@@ -47,21 +47,24 @@ export function login(url, req) {
   // jtest01@gmail.com / qwer1234!@# --> 오라운더(가입지역 일본)
   // etest01@gmail.com / qwer1234!@# --> 오라운더(가입지역 기타해외)
   // celeb01@gmail.com / qwer1234!@# --> 셀럽(가입지역 한국)
+  // const req = { id: 'joseok76@gmail.com', password: 'as348843!@' }; // memberNo : 58
+  // const req = { id: 'jonghyuck59@gmail.com', password: 'triplex59@' }; // memberNo : 70
 
   const _url = url ? url : '/api/v1/login/email';
   Cypress.env('startTime', performance.now());
   cy.request({
     method: 'POST',
     url: _url,
-    // body: req ? req : { id: 'test5@upleat.com', password: 'qwerasdf123!' },
     body: req ? req : { id: 'ktest01@gmail.com', password: 'qwer1234!@#' },
   })
     .then(({ body }) => {
       const { accessToken } = body.token;
-      window.sessionStorage.setItem('x-oround-token', accessToken); // 동기화 시킬수 없음
+      window.sessionStorage.setItem('x-oround-token', accessToken); // for jwt.decode
       Cypress.env('token', accessToken);
-      const userInfo = jwt.decode(accessToken);
-      Cypress.env('memberNo', userInfo.memberNo);
+      const userInfo = jwt.decode(accessToken); // celeb: true, exp: 1640915952, iss: "oround.com", joinAreaCode: "105001", memberNo: 70, sub: "A"
+      const { celeb, joinAreaCode, memberNo } = userInfo;
+      Cypress.env('memberNo', memberNo);
+      Cypress.env('x-oround-grounder', celeb ? 'selleb' : 'orounder'); // 셀럽과 일반유저 구분
       const endTime = performance.now();
       Cypress.env(
         'runningTime',
@@ -80,13 +83,17 @@ export function login(url, req) {
   );
 }
 
-export function getToken() {
+function getToken() {
   return Cypress.env('token');
   // JSON.stringify(window.sessionStorage.getItem('x-oround-token')); // 동기화 시킬수 없음
 }
 
+function getCelebOrOrounder() {
+  return Cypress.env('x-oround-grounder');
+}
+
 // 실행 시간 측정
-export function getRunningTime() {
+function getRunningTime() {
   return Cypress.env('runningTime') + ' ms';
 }
 
@@ -102,8 +109,8 @@ export function get(url, req) {
       url: url,
       headers: {
         'x-oround-token': getToken(),
-        // 'x-oround-grounder': 'selleb', // selleb, orounder
-        'x-oround-language': 'JP', // KO, JP, EN
+        'x-oround-grounder': getCelebOrOrounder(),
+        'x-oround-language': getLang(),
       },
       failOnStatusCode: false,
     })
@@ -124,6 +131,8 @@ export function post(url, req) {
       url: url,
       headers: {
         'x-oround-token': getToken(),
+        'x-oround-grounder': getCelebOrOrounder(),
+        'x-oround-language': getLang(),
       },
       body: req,
     })
@@ -144,6 +153,8 @@ export function put(url, req) {
       url: url,
       headers: {
         'x-oround-token': getToken(),
+        'x-oround-grounder': getCelebOrOrounder(),
+        'x-oround-language': getLang(),
       },
       body: req,
     })
@@ -164,6 +175,8 @@ export function del(url, req) {
       url: url,
       headers: {
         'x-oround-token': getToken(),
+        'x-oround-grounder': getCelebOrOrounder(),
+        'x-oround-language': getLang(),
       },
       body: req,
     })
@@ -174,4 +187,14 @@ export function del(url, req) {
         (endTime - Cypress.env('startTime')).toFixed(0)
       );
     });
+}
+
+export function setLang(lang) {
+  if (!lang) lang = 'KO'; // lang : KO, EN, JP
+  Cypress.env('lang', lang);
+}
+
+function getLang() {
+  const lang = Cypress.env('lang');
+  return lang ? lang : 'KO';
 }
