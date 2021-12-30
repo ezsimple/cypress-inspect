@@ -5,7 +5,7 @@ describe('아트워크 상품 상세 Summary (mhlee)', () => {
   before(() => {
     login();
   });
-  const q = '28052';
+  const q = '36308';
 
   // it('아티스트 Summary', () => {
   //   const url = host + '/api/v1/art-product/' + q + '/artist/summary';

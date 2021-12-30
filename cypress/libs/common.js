@@ -102,6 +102,8 @@ export function get(url, req) {
       url: url,
       headers: {
         'x-oround-token': getToken(),
+        // 'x-oround-grounder': 'selleb', // selleb, orounder
+        'x-oround-language': 'JP', // KO, JP, EN
       },
       failOnStatusCode: false,
     })

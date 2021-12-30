@@ -1,10 +1,11 @@
-import { login } from '../../libs/common';
+import { get, login, report } from '../../libs/common';
 
 describe('셀럽 기획전 (mhlee)', () => {
   const host = Cypress.env('host-api');
 
   before(() => {
-    const req = { id: 'jonghyuck59@gmail.com', password: 'triplex59@' }; // memberNo : 70
+    // const req = { id: 'jonghyuck59@gmail.com', password: 'triplex59@' }; // memberNo : 70
+    const req = { id: 'joseok76@gmail.com', password: 'as348843!@' }; // memberNo : 58
     login(null, req);
   });
 
@@ -67,15 +68,17 @@ describe('셀럽 기획전 (mhlee)', () => {
   //   });
   // });
 
-  // it('아티스트별 기획전 목록(페이징)', () => {
-  //   const url =
-  //     host + '/api/v1/celeb/' + artistMemberNo + '/registered/exhibitions';
-  //   const req = {};
-  //   get(url, req).should((response) => {
-  //     // expect(response.status).to.eq(200);
-  //     report(url, req, response);
-  //   });
-  // });
+  it('아티스트별 기획전 목록(페이징)', () => {
+    // const artistMemberNo = Cypress.env('memberNo');
+    const artistMemberNo = 57; // squidgame
+    const url =
+      host + '/api/v1/celeb/' + artistMemberNo + '/registered/exhibitions';
+    const req = {};
+    get(url, req).should((response) => {
+      // expect(response.status).to.eq(200);
+      report(url, req, response);
+    });
+  });
 
   // it('아티스트별 기획전 상세(페이징)', () => {
   //   const url =
