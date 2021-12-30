@@ -64,6 +64,7 @@ export function login(url, req) {
       const userInfo = jwt.decode(accessToken); // celeb: true, exp: 1640915952, iss: "oround.com", joinAreaCode: "105001", memberNo: 70, sub: "A"
       const { celeb, joinAreaCode, memberNo } = userInfo;
       Cypress.env('memberNo', memberNo);
+      Cypress.env('artistMemberNo', celeb == true ? memberNo : undefined);
       Cypress.env('x-oround-grounder', celeb ? 'selleb' : 'orounder'); // 셀럽과 일반유저 구분
       const endTime = performance.now();
       Cypress.env(
