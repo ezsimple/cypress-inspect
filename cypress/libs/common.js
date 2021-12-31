@@ -184,6 +184,11 @@ function getLang() {
   return lang ? lang : 'KO';
 }
 
+export function clrHeader() {
+  Cypress.env('token', undefined);
+  Cypress.env('x-oround-grounder', undefined);
+}
+
 function getHeader() {
   const header = {};
   if (getToken()) header['x-oround-token'] = getToken();
